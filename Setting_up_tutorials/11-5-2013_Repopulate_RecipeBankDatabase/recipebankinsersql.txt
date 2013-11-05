@@ -1,0 +1,42 @@
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Chicken Salad', 'Fresh salad with grilled chicken', 4, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Macaroni & Cheese', 'Macaroni nooldes covered in cheddar cheese', 2, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Uncle Sams Ribs', 'Uncle Sams bbq smoked ribs covered in special bbq sauce', 5, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Apple Vinegrette', 'Salad Dressing', 3, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Pad Thai', 'Chicken, Shrimp or Beef Pad Thai', 2, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Lemon Butter Asparagus', 'Pan fried asparagus in butter with lemon and pepper', 4, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Meatballs', 'Simple meatball recipe', 1, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Aunt Marys Fish & Chips', 'Aunt Marys famous beer batter fish and sea salt fries', 5, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Scalloped Potatoes', 'Scalloped Potatoes', 3, 1);
+INSERT into `recipebank`.`recipe` (`RecipeTitle`, `Description`, `Rate`, `RecipeState`) VALUES ( 'Garlic and Herb LoL', 'Leg of lamb roasted with organic herbs and garlic', 3, 1);
+
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Entree');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Side Dish');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Meat');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Veggie');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Noodles');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Fried');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Dressing');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Sauce');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Pasta');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ( 'Salad');
+INSERT INTO `recipebank`.`category` (`CatagoryTitle`) VALUES ('Asian');
+
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('1', '10');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('2', '5');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('1', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('3', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('4', '10');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('5', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('6', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('7', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('8', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('8', '6');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('9', '4');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('10', '3');
+INSERT INTO `recipebank`.`recipecategory` (`RecipeId`, `CatagoryId`) VALUES ('10', '11');
+
+INSERT INTO comment (`DetailInfo`,`RecipeId`, `AccountId`, `CommentTime`)
+VALUES('Accept!','3','3','2013-01-01 00:00:13');
+
+INSERT INTO shoppinglist (`ShoppingDate`)
+VALUES('2013-01-01');

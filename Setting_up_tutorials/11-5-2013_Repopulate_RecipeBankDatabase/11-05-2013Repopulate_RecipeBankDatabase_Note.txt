@@ -1,0 +1,10 @@
+1. Each table's id can auto increment
+2. Fix the insert script to make everyone can use
+3. Insert data for each table
+4. Add a field FriendId to table Followlist
+5. Back up the whole database into one .sql
+6. Fix table Category's wrong column name 
+7. Confirm the database can restore in user's database
+
+This sql script already contain data in all table and structure
+Only open the file recipebankDBnew.sql with MySql, and run it.
