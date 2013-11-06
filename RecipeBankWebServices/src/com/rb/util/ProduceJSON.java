@@ -21,7 +21,7 @@ public class ProduceJSON {
 
 		ResultSetMetaData metaData = rs.getMetaData();
 		int columnCount = metaData.getColumnCount();
-
+		
 		while (rs.next()) {
 			JSONObject jsonObj = new JSONObject();
 

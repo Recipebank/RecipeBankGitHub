@@ -29,7 +29,25 @@ public class Recipe {
 		return recipeString;
 
 	}
-	
+	public String getRecipesAsYouWant(int amount)
+	{
+		String recipeString="";
+		String sqlString="select RecipeId,RecipeTitle,Description,rate,RecipeState,a.AccountId,NickName "
+				+ "from recipebank.recipe r join recipebank.account a on r.AccountID=a.AccountId "
+				+ "order by RecipeId desc limit "+amount;
+		try{
+			conn=ConnectDB.getConnection();
+			st=conn.prepareStatement(sqlString);
+			rs=st.executeQuery();
+			recipeString=ProduceJSON.resultSetToJsonArray(rs);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectDB.closeConnection(conn);
+		}
+		return recipeString;
+	}
 
 	public String getRecipeDetails(int recipeId) {
 

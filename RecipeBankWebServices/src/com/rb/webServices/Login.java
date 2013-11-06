@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.rb.util.ConnectDB;
+import com.rb.util.ProduceJSON;
 
 public class Login {
 
@@ -13,7 +14,7 @@ public class Login {
 		Connection conn = null;
 	    PreparedStatement statement = null;
 	    ResultSet rs = null;
-	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' password='"+password+"'";
+	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' and password='"+password+"'";
 	    
 	    try {
 			conn=ConnectDB.getConnection();
@@ -42,7 +43,7 @@ public class Login {
 		Connection conn = null;
 	    PreparedStatement statement = null;
 	    ResultSet rs = null;
-	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' password='"+password+"'";
+	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' and password='"+password+"'";
 	    
 	    try {
 			conn=ConnectDB.getConnection();
@@ -68,7 +69,7 @@ public class Login {
 		Connection conn = null;
 	    PreparedStatement statement = null;
 	    ResultSet rs = null;
-	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' password='"+password+"'";
+	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' and password='"+password+"'";
 	    
 	    try {
 			conn=ConnectDB.getConnection();
@@ -88,5 +89,29 @@ public class Login {
 	    	ConnectDB.closeConnection(conn);
 	    }
 		return status;
+	}
+	public String loginAndGetUserInfo(String userName,String password)
+	{
+		String userInfoString="";
+		Connection conn = null;
+	    PreparedStatement statement = null;
+	    ResultSet rs = null;
+	    String sql = "SELECT * FROM recipebank.account where nickname='"+userName+"' and password='"+password+"'";
+	    System.out.println(sql);
+	    try {
+			conn=ConnectDB.getConnection();
+			statement=conn.prepareStatement(sql);
+			rs=statement.executeQuery();
+			userInfoString=ProduceJSON.resultSetToJsonArray(rs);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    finally
+	    {
+	    	ConnectDB.closeConnection(conn);
+	    }
+		return userInfoString;
 	}
 }

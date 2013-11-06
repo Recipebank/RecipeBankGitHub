@@ -49,6 +49,15 @@ public class RecipeClient {
 				.arrayListToJsonArray(alArrayList);
 		System.out.println("ArrayList to Json Result:" + arrayToJsonString);
 
+		//Test 
+		com.rb.testClient.RecipeStub.GetRecipesAsYouWant request1 = new com.rb.testClient.RecipeStub.GetRecipesAsYouWant();
+		request1.setAmount(6);
+
+
+		// Invoking the service
+
+		com.rb.testClient.RecipeStub.GetRecipesAsYouWantResponse response1 = stub.getRecipesAsYouWant(request1);
+		System.out.println("Top 6 Recipes Information are :\n"+response.get_return());
 //		// test convert a hashmap to one json object
 //		HashMap<String, String> hsHashMap = new HashMap<String, String>();
 //		hsHashMap.put("username", "admin");
