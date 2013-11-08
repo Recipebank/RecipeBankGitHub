@@ -71,7 +71,7 @@ public class Recipe {
 
 	public String getRecipesAsYouWant(int amount) {
 		String recipeString = "";
-		String sqlString = "select RecipeId,RecipeTitle,Description,rate,RecipeState,a.AccountId,NickName "
+		String sqlString = "select a.AccountId,NickName,RecipeId,RecipeTitle,Description,rate,RecipeState,photo "
 				+ "from recipebank.recipe r join recipebank.account a on r.AccountID=a.AccountId "
 				+ "order by RecipeId desc limit " + amount;
 		try {
