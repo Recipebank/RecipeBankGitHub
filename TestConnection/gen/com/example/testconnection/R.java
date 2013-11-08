@@ -24,9 +24,12 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080006;
+        public static final int LoadPIC=0x7f080007;
+        public static final int Login=0x7f080006;
+        public static final int action_settings=0x7f080009;
         public static final int btn_login=0x7f080002;
-        public static final int button1=0x7f080005;
+        public static final int button1=0x7f080008;
+        public static final int imgView=0x7f080005;
         public static final int textView1=0x7f080004;
         public static final int txtPW=0x7f080001;
         public static final int txtStatus=0x7f080003;

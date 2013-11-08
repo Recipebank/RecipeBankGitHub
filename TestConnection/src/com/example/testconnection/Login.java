@@ -80,6 +80,8 @@ public class Login extends Activity {
 		}
 
 	}
+	
+	
 
 	/***************/
 	private void loginAction() {
