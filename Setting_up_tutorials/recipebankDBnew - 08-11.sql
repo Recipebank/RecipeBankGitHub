@@ -128,7 +128,7 @@ CREATE TABLE `favourite` (
 
 LOCK TABLES `favourite` WRITE;
 /*!40000 ALTER TABLE `favourite` DISABLE KEYS */;
-INSERT INTO `favourite` VALUES (1,1,2),(2,2,3),(3,1,1),(4,1,5);
+INSERT INTO `favourite` VALUES (1,1,6),(2,2,3),(3,1,7),(4,3,3);
 /*!40000 ALTER TABLE `favourite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +211,7 @@ CREATE TABLE `recipe` (
 
 LOCK TABLES `recipe` WRITE;
 /*!40000 ALTER TABLE `recipe` DISABLE KEYS */;
-INSERT INTO `recipe` VALUES (1,1,'Fresh salad with grilled chicken','4',1,0,'0'),(2,1,'Macaroni nooldes covered in cheddar cheese','2',1,0,'0'),(3,1,'Uncle Sams bbq smoked ribs covered in special','5',1,0,'1'),(4,1,'Salad Dressing','3',1,0,'1'),(5,2,'Chicken, Shrimp or Beef Pad Thai','2',1,0,'1'),(6,1,'Pan fried asparagus in butter with lemon and ','4',1,0,'1'),(7,1,'Simple meatball recipe','1',1,0,'1'),(8,1,'Aunt Marys famous beer batter fish and sea sa','5',1,0,'1'),(9,1,'Scalloped Potatoes','3',1,0,'1'),(10,2,'Leg of lamb roasted with organic herbs and ga','3',1,0,'2'),(11,3,'Hot and savory','4',0,0,'1'),(12,2,'The recipes for oatmeal cookies.','3',0,0,'2');
+INSERT INTO `recipe` VALUES (1,1,'Chicken Salad','Fresh salad with grilled chicken',4,1,NULL),(2,1,'Macaroni & Cheese','Macaroni nooldes covered in cheddar cheese',2,1,NULL),(3,1,'Uncle Sams Ribs','Uncle Sams bbq smoked ribs covered in special bbq sauce',5,1,NULL),(4,1,'Apple Vinegrette','Salad Dressing',3,1,NULL),(5,1,'Pad Thai','Chicken, Shrimp or Beef Pad Thai',2,1,NULL),(6,2,'Lemon Butter Asparagus','Pan fried asparagus in butter with lemon and pepper',4,1,NULL),(7,2,'Meatballs','Simple meatball recipe',1,1,NULL),(8,2,'Aunt Marys Fish & Chips','Aunt Marys famous beer batter fish and sea salt fries',5,1,NULL),(9,3,'Scalloped Potatoes','Scalloped Potatoes',3,1,NULL),(10,3,'Garlic and Herb LoL','Leg of lamb roasted with organic herbs and garlic',3,1,NULL),(11,3,'fajita-style quesadillas','Hot and savory',4,0,NULL),(12,3,'oatmeal cookies','The recipes for oatmeal cookies.',3,0,NULL);
 /*!40000 ALTER TABLE `recipe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -404,4 +404,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-07 15:05:56
+-- Dump completed on 2013-11-08  1:02:11

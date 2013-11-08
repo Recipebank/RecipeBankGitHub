@@ -14,13 +14,32 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="14dp" />
+
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
-        android:text="Button" />
+        android:layout_above="@+id/imgView"
+        android:layout_alignLeft="@+id/imgView"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="45dp"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/LoadPIC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/button1"
+        android:text="LoadPic" />
 
 </RelativeLayout>
