@@ -11,7 +11,7 @@ import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+//Huijun Sun
 public class ProduceJSON {
 
 	public static String resultSetToJsonArray(ResultSet rs) throws SQLException,

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import com.rb.util.ConnectDB;
 
 public class ImageOperation {
-
+	//Huijun Sun
 	public ImageOperation() {
 		// TODO Auto-generated constructor stub
 	}
