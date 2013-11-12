@@ -15,16 +15,16 @@ public class RecipeClient {
 
 		// Test GetAllRecipes()
 		// Creating the request
-		com.rb.testClient.RecipeStub.GetAllRecipes request = new com.rb.testClient.RecipeStub.GetAllRecipes();
+		//com.rb.testClient.RecipeStub.GetAllRecipes request = new com.rb.testClient.RecipeStub.GetAllRecipes();
 
 		// Invoking the service
 
-		com.rb.testClient.RecipeStub.GetAllRecipesResponse response = stub
+		/*com.rb.testClient.RecipeStub.GetAllRecipesResponse response = stub
 				.getAllRecipes(request);
 		String jsonString = response.get_return();
 
 		// get response Json-format string from websrevice
-		System.out.println("GetAllRecipes JsonString" + jsonString);
+		System.out.println("GetAllRecipes JsonString" + jsonString);*/
 
 		// // test convert response string to ArrayList.
 		// ArrayList<HashMap<String, String>> alArrayList = ProduceJSON
@@ -67,9 +67,9 @@ public class RecipeClient {
 		// System.out.println(ProduceJSON.hashMapToJsonObject(hsHashMap));
 		// System.out.println(ProduceJSON.parseJsonObjectToHashMap(ProduceJSON
 		// .hashMapToJsonObject(hsHashMap)));
-/*
+
 		// Test getRecipeByAccount(int accountId)
-		com.rb.testClient.RecipeStub.GetRecipeByAccount request2 = new com.rb.testClient.RecipeStub.GetRecipeByAccount();
+		/*com.rb.testClient.RecipeStub.GetRecipeByAccount request2 = new com.rb.testClient.RecipeStub.GetRecipeByAccount();
 		request2.setAccountId(1);
 
 		// Invoking the service
@@ -147,8 +147,7 @@ public class RecipeClient {
 				com.rb.testClient.RecipeStub.SearchRecipeByKeyWordResponse response9 = stub
 						.searchRecipeByKeyWord(request9);
 				System.out
-						.println("Search recipe(Keyword=\"Salad\"):\n" + response8.get_return());
-*/
+						.println("Search recipe(Keyword=\"Salad\"):\n" + response8.get_return());*/
 	}
 
 }

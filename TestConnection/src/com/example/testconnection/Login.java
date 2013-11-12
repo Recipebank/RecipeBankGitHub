@@ -3,6 +3,7 @@ package com.example.testconnection;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 
@@ -17,15 +18,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Login extends Activity {
 
-	private final String NAMESPACE = "http://ws.userlogin.com";
-	private final String URL = "http://10.24.12.63:8088/RecipeBank/services/Login?wsdl";
-	private final String SOAP_ACTION = "http://ws.userlogin.com/authentication";
-	private final String METHOD_NAME = "authentication";
+	private final String NAMESPACE = "http://webServices.rb.com";
+	private final String URL = "http://192.168.2.8:8088/RecipeBankWebServices1/services/Login?wsdl";
+	private final String SOAP_ACTION = "http://webServices.rb.com/loginGetBoolenTypeStatus";
+	private final String METHOD_NAME = "loginGetBoolenTypeStatus";
 
-	String result = "ok";
+	Boolean result = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,8 @@ public class Login extends Activity {
 				// loginAction();
 				asyncCall task = new asyncCall();
 				task.execute();
-				TextView result = (TextView) findViewById(R.id.txtStatus);
-				result.setText(Login.this.result);
+			
+				
 			}
 		});
 	}
@@ -66,6 +68,15 @@ public class Login extends Activity {
 
 		@Override
 		protected void onPostExecute(Void result) {
+			if(Login.this.result)
+			{
+			Intent intent=new Intent(Login.this,MainActivity.class);
+			startActivity(intent);
+			}
+			else
+			{
+				Toast.makeText(Login.this, "Invalid username or password", Toast.LENGTH_LONG).show();
+			}
 			Log.i(TAG, "onPostExecute");
 		}
 
@@ -80,8 +91,6 @@ public class Login extends Activity {
 		}
 
 	}
-	
-	
 
 	/***************/
 	private void loginAction() {
@@ -118,7 +127,7 @@ public class Login extends Activity {
 			Log.i(TAG, "Result Fahrenheit: " + response);
 			// TextView result = (TextView) findViewById(R.id.txtStatus);
 			System.out.println("Response String is " + response.toString());
-			result = response.toString();
+			result = Boolean.valueOf(response.toString());
 			// result.setText(response.toString());
 			// result.setText("OK");
 

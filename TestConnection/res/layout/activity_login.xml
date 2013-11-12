@@ -9,20 +9,6 @@
     tools:context=".Login" >
 
     <EditText
-        android:id="@+id/txtUN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="22dp"
-        android:layout_marginTop="88dp"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
         android:id="@+id/txtPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,12 +28,41 @@
         android:text="Button" />
 
     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtUN"
+        android:layout_toLeftOf="@+id/txtUN"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/txtUN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="117dp"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtPW"
+        android:layout_alignBottom="@+id/txtPW"
+        android:layout_alignLeft="@+id/txtStatus"
+        android:text="Password" />
+
+    <TextView
         android:id="@+id/txtStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="67dp"
-        android:text="TextView" />
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toLeftOf="@+id/textView1"
+        android:text="Username" />
 
 </RelativeLayout>
