@@ -15,7 +15,7 @@ import java.sql.Statement;
 import javax.imageio.ImageIO;
 
 import org.kobjects.base64.Base64;
-
+//Huijun Sun
 public class ImageOperation {
 
 	public void putBytesImg(int num) {

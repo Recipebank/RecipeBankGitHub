@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import com.rb.util.ConnectDB;
 import com.rb.util.ProduceJSON;
-
+//Huijun Sun
 public class Login {
 
 	public String loginGetStringTypeStatus(String userName, String password) {
