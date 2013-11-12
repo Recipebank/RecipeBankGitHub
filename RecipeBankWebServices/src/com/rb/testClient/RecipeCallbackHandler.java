@@ -77,6 +77,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for getRecipeIngredient method
+            * override this method for handling normal response from getRecipeIngredient operation
+            */
+           public void receiveResultgetRecipeIngredient(
+                    com.rb.testClient.RecipeStub.GetRecipeIngredientResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getRecipeIngredient operation
+           */
+            public void receiveErrorgetRecipeIngredient(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for searchRecipeByState method
             * override this method for handling normal response from searchRecipeByState operation
             */

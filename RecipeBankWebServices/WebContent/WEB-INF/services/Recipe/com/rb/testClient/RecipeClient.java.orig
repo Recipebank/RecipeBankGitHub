@@ -67,7 +67,7 @@ public class RecipeClient {
 		// System.out.println(ProduceJSON.hashMapToJsonObject(hsHashMap));
 		// System.out.println(ProduceJSON.parseJsonObjectToHashMap(ProduceJSON
 		// .hashMapToJsonObject(hsHashMap)));
-
+/*
 		// Test getRecipeByAccount(int accountId)
 		/*com.rb.testClient.RecipeStub.GetRecipeByAccount request2 = new com.rb.testClient.RecipeStub.GetRecipeByAccount();
 		request2.setAccountId(1);
@@ -147,15 +147,12 @@ public class RecipeClient {
 				com.rb.testClient.RecipeStub.SearchRecipeByKeyWordResponse response9 = stub
 						.searchRecipeByKeyWord(request9);
 				System.out
+<<<<<<< HEAD
+						.println("Search recipe(Keyword=\"Salad\"):\n" + response8.get_return());
+*/
+=======
 						.println("Search recipe(Keyword=\"Salad\"):\n" + response8.get_return());*/
-		// Test searchRecipeByRate(int rate)
-				com.rb.testClient.RecipeStub.GetRecipeIngredient request10 = new com.rb.testClient.RecipeStub.GetRecipeIngredient();
-				request10.setRecipeId(11);;
-				// Invoking the service
-
-				com.rb.testClient.RecipeStub.GetRecipeIngredientResponse response10 = stub
-						.getRecipeIngredient(request10);
-				System.out.println("Get Ingredient(RecipeId=11):\n" + response10.get_return());
+>>>>>>> 06c097e8133b160fd2eea76babb99f9430696245
 	}
 
 }

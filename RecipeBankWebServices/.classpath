@@ -15,6 +15,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Json"/>
 	<classpathentry kind="lib" path="org.json-20120521.jar"/>
-	<classpathentry kind="lib" path="F:/eCentennial/My Homework/Programming Four/COMP231-Software Project Management/jar files/ksoap2-android-assembly-2.4-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="ksoap2-android-assembly-2.4-jar-with-dependencies.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
