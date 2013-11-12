@@ -3,9 +3,15 @@ package com.rb.webServices;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.rb.util.ConnectDB;
 import com.rb.util.ProduceJSON;
+import com.rb.util.RecipeOperation;
 
 public class Recipe {
 
@@ -68,7 +74,7 @@ public class Recipe {
 		return recipeString;
 
 	}
-
+	//anthor: Huijun Sun
 	public String getRecipesAsYouWant(int amount) {
 		String recipeString = "";
 		String sqlString = "select a.AccountId,NickName,RecipeId,RecipeTitle,Description,rate,RecipeState,photo "
@@ -190,5 +196,61 @@ public class Recipe {
 		}
 		return recipeString;
 	}
+//anthor: Huijun Sun
+	public String CreateRecipe(String recipeString) {
+		JSONObject recipeJsonObject = new JSONObject();
+		HashMap<String, String> recipeMap = ProduceJSON
+				.parseJsonObjectToHashMap(recipeString);
+		try {
+			recipeJsonObject.put("RecipeId",
+					RecipeOperation.createRecipe(recipeMap));
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return recipeJsonObject.toString();
+	}
+	//anthor: Huijun Sun
+	public String insertIngredients(String ingStr) {
+		JSONObject jsonObject = new JSONObject();
+		ArrayList<HashMap<String, String>> ingList = ProduceJSON
+				.parseJsonArrayToArrylist(ingStr);
+		try {
+			if (RecipeOperation.InsertIngredients(ingList)) {
+
+				jsonObject.put("result", 1);
+
+			} else {
+				jsonObject.put("result", 0);
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonObject.toString();
+	}
+	//anthor: Huijun Sun
+	public String insertRecipeSteps(String stepString)
+	{
+		JSONObject jsonObject = new JSONObject();
+		ArrayList<HashMap<String, String>> stepsList = ProduceJSON
+				.parseJsonArrayToArrylist(stepString);
+		try {
+			if (RecipeOperation.insertSteps(stepsList)) {
+
+				jsonObject.put("result", 1);
+
+			} else {
+				jsonObject.put("result", 0);
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonObject.toString();
+		
+	}
+	
 
 }
