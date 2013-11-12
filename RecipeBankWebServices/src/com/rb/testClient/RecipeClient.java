@@ -67,7 +67,7 @@ public class RecipeClient {
 		// System.out.println(ProduceJSON.hashMapToJsonObject(hsHashMap));
 		// System.out.println(ProduceJSON.parseJsonObjectToHashMap(ProduceJSON
 		// .hashMapToJsonObject(hsHashMap)));
-
+/*
 		// Test getRecipeByAccount(int accountId)
 		com.rb.testClient.RecipeStub.GetRecipeByAccount request2 = new com.rb.testClient.RecipeStub.GetRecipeByAccount();
 		request2.setAccountId(1);
@@ -148,6 +148,7 @@ public class RecipeClient {
 						.searchRecipeByKeyWord(request9);
 				System.out
 						.println("Search recipe(Keyword=\"Salad\"):\n" + response8.get_return());
+*/
 	}
 
 }
