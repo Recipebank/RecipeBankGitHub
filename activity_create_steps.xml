@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/recipebanklogo"
+    >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/step1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <EditText
+                                android:id="@+id/editText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textMultiLine" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/imageViewStep1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="center"
+                                android:src="@drawable/chickensoup" />
+
+                        </TableRow>
+                    </TableLayout>
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/step2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+					<TableLayout
+					    android:layout_width="wrap_content"
+					    android:layout_height="match_parent"
+					    android:layout_weight="1" >
+
+					    <TableRow
+					        android:id="@+id/tableRow3"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" >
+
+					        <EditText
+					            android:id="@+id/editText2"
+					            android:layout_width="wrap_content"
+					            android:layout_height="200dp"
+					            android:layout_weight="1"
+					            android:ems="10"
+					            android:inputType="textMultiLine" />
+
+					    </TableRow>
+
+					    <TableRow
+					        android:id="@+id/tableRow4"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" >
+
+					        <ImageView
+					            android:id="@+id/imageViewStep2"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:scaleType="center"
+					            android:src="@drawable/chickensoup" />
+
+					    </TableRow>
+					</TableLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/step3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+					<TableLayout
+					    android:layout_width="wrap_content"
+					    android:layout_height="match_parent"
+					    android:layout_weight="1" >
+
+					    <TableRow
+					        android:id="@+id/tableRow5"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" >
+
+					        <EditText
+					            android:id="@+id/editText1"
+					            android:layout_width="wrap_content"
+					            android:layout_height="200dp"
+					            android:layout_weight="1"
+					            android:ems="10"
+					            android:inputType="textMultiLine" />
+
+					    </TableRow>
+
+					    <TableRow
+					        android:id="@+id/tableRow6"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" >
+
+					        <ImageView
+					            android:id="@+id/imageViewStep3"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:scaleType="center"
+					            android:src="@drawable/chickensoup" />
+
+					    </TableRow>
+					</TableLayout>
+
+                </LinearLayout>
+            	
+                <LinearLayout
+                    android:id="@+id/step4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                    <TableRow
+                        android:id="@+id/tableRow7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <EditText
+                            android:id="@+id/editText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="200dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="textMultiLine" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/imageViewStep4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="center"
+                            android:src="@drawable/chickensoup" />
+
+                    </TableRow>
+                </TableLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
