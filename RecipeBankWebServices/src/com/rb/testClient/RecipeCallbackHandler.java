@@ -61,6 +61,38 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for getRecipeByAccount method
+            * override this method for handling normal response from getRecipeByAccount operation
+            */
+           public void receiveResultgetRecipeByAccount(
+                    com.rb.testClient.RecipeStub.GetRecipeByAccountResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getRecipeByAccount operation
+           */
+            public void receiveErrorgetRecipeByAccount(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getRecipeIngredient method
+            * override this method for handling normal response from getRecipeIngredient operation
+            */
+           public void receiveResultgetRecipeIngredient(
+                    com.rb.testClient.RecipeStub.GetRecipeIngredientResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getRecipeIngredient operation
+           */
+            public void receiveErrorgetRecipeIngredient(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for searchRecipeByState method
             * override this method for handling normal response from searchRecipeByState operation
             */
@@ -74,6 +106,38 @@
            * override this method for handling error response from searchRecipeByState operation
            */
             public void receiveErrorsearchRecipeByState(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getRecipeByAccountWithAmount method
+            * override this method for handling normal response from getRecipeByAccountWithAmount operation
+            */
+           public void receiveResultgetRecipeByAccountWithAmount(
+                    com.rb.testClient.RecipeStub.GetRecipeByAccountWithAmountResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getRecipeByAccountWithAmount operation
+           */
+            public void receiveErrorgetRecipeByAccountWithAmount(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getRecipesAsYouWant method
+            * override this method for handling normal response from getRecipesAsYouWant operation
+            */
+           public void receiveResultgetRecipesAsYouWant(
+                    com.rb.testClient.RecipeStub.GetRecipesAsYouWantResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getRecipesAsYouWant operation
+           */
+            public void receiveErrorgetRecipesAsYouWant(java.lang.Exception e) {
             }
                 
            /**

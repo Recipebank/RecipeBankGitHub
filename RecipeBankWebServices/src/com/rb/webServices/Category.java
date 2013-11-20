@@ -8,7 +8,7 @@ import com.rb.util.ConnectDB;
 import com.rb.util.ProduceJSON;
 
 public class Category {
-
+//Huijun Sun
 	public String getAllCategories()
 	{
 		String category="";
