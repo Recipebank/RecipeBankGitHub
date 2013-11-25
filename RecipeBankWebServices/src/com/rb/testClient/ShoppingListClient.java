@@ -3,7 +3,6 @@ package com.rb.testClient;
 import org.json.JSONObject;
 
 import com.rb.testClient.ShoppingListStub.AddIngredientIntoShoppingListResponse;
-import com.rb.util.ShoppingListOperation;
 
 public class ShoppingListClient {
 
