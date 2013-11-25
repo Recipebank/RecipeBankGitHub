@@ -22,14 +22,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.rb.activities.R;
 
 public class DetailedViewActivity extends Activity {
 	
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.1.77:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/searchRecipeById";
 	private final String METHOD_NAME = "searchRecipeById";
 	private String TAG = "Reci";
@@ -153,6 +153,14 @@ public class DetailedViewActivity extends Activity {
 		} catch (Exception e) {
 			Log.e(TAG, "Error: " + e.getMessage());
 		}
+	}
+	
+	public void ViewSteps(View view)
+	{
+		Intent intent =new Intent(DetailedViewActivity.this,StepsActivity.class);
+		String recipeID=String.valueOf(recipeId);
+		intent.putExtra("recipeid",recipeID);
+		startActivity(intent);
 	}
 
 
