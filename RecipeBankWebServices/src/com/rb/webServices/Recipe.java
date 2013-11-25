@@ -281,5 +281,37 @@ public class Recipe {
 		
 	}
 	
+	//Dongchao Feng
+	public int rateRecipe(int recipeId, int rate)
+	{
+		int result = 0;
+		Connection conn = null;
+		try {
+			conn = ConnectDB.getConnection();
+			PreparedStatement st = null;
+			String sql = "update recipebank.recipe set Rate = ? where RecipeId=?";
+			st = conn.prepareStatement(sql);
+			st.setInt(1, rate);
+			st.setInt(2, recipeId);
+			st.executeUpdate();
+			sql = "select * from recipebank.recipe where Rate = ? and RecipeId=?";
+			st = conn.prepareStatement(sql);
+			st.setInt(1, rate);
+			st.setInt(2, recipeId);
+			rs=st.executeQuery();
+			if (rs.next()) {
+				result = rate;
+			} else {
+				result = 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectDB.closeConnection(conn);
+		}
+
+		return result;
+		
+	}
 
 }

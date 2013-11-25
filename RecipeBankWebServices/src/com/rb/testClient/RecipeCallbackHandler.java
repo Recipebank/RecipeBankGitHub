@@ -77,6 +77,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for insertRecipeSteps method
+            * override this method for handling normal response from insertRecipeSteps operation
+            */
+           public void receiveResultinsertRecipeSteps(
+                    com.rb.testClient.RecipeStub.InsertRecipeStepsResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from insertRecipeSteps operation
+           */
+            public void receiveErrorinsertRecipeSteps(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for getRecipeIngredient method
             * override this method for handling normal response from getRecipeIngredient operation
             */
@@ -90,6 +106,22 @@
            * override this method for handling error response from getRecipeIngredient operation
            */
             public void receiveErrorgetRecipeIngredient(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for createRecipe method
+            * override this method for handling normal response from createRecipe operation
+            */
+           public void receiveResultcreateRecipe(
+                    com.rb.testClient.RecipeStub.CreateRecipeResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from createRecipe operation
+           */
+            public void receiveErrorcreateRecipe(java.lang.Exception e) {
             }
                 
            /**
@@ -173,6 +205,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for rateRecipe method
+            * override this method for handling normal response from rateRecipe operation
+            */
+           public void receiveResultrateRecipe(
+                    com.rb.testClient.RecipeStub.RateRecipeResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from rateRecipe operation
+           */
+            public void receiveErrorrateRecipe(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for getAllRecipes method
             * override this method for handling normal response from getAllRecipes operation
             */
@@ -218,6 +266,22 @@
            * override this method for handling error response from searchRecipeByCategory operation
            */
             public void receiveErrorsearchRecipeByCategory(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for insertIngredients method
+            * override this method for handling normal response from insertIngredients operation
+            */
+           public void receiveResultinsertIngredients(
+                    com.rb.testClient.RecipeStub.InsertIngredientsResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from insertIngredients operation
+           */
+            public void receiveErrorinsertIngredients(java.lang.Exception e) {
             }
                 
 

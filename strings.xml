@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RecipeBankGUI</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string-array name="menuStrings">
+        <item>Shopping List</item>
+        <item>Upload Recipe</item>
+        <item>Manage Recipe</item>
+    	<item>Log Out</item>
+    </string-array>
+    
+    <string-array name="recipeTableStrings">
+        <item>Description</item>
+        <item>Ingredients</item>
+        <item>Steps</item>
+    	<item>Comments</item>
+    </string-array>
+
+    <string-array name="ingredientStrings">
+        <item>Entree</item>
+        <item>Side Dish</item>
+        <item>Meat</item>
+    	<item>Veggie</item>
+    	<item>Noodles</item>
+        <item>Fried</item>
+        <item>Dressing</item>
+    	<item>Sauce</item>
+    	<item>Pasta</item>
+        <item>Salad</item>
+        <item>Asian</item>
+    </string-array>
+    
+</resources>
