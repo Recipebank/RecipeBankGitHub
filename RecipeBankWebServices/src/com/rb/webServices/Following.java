@@ -9,6 +9,7 @@ import com.rb.util.ProduceJSON;
 
 public class Following {
 
+	//Dongchao Feng
 	public int checkFolllowState(int accountId, int friendId) {
 		int result = 0;
 		Connection conn = null;

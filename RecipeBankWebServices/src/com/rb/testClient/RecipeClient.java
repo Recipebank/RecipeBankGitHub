@@ -150,12 +150,22 @@ public class RecipeClient {
 						.println("Search recipe(Keyword=\"Salad\"):\n" + response8.get_return());*/
 		// Test searchRecipeByRate(int rate)
 				com.rb.testClient.RecipeStub.GetRecipeIngredient request10 = new com.rb.testClient.RecipeStub.GetRecipeIngredient();
-				request10.setRecipeId(11);;
+				request10.setRecipeId(11);
 				// Invoking the service
 
 				com.rb.testClient.RecipeStub.GetRecipeIngredientResponse response10 = stub
 						.getRecipeIngredient(request10);
 				System.out.println("Get Ingredient(RecipeId=11):\n" + response10.get_return());
+				
+		// rateRecipe(int recipeId, int rate)
+				com.rb.testClient.RecipeStub.RateRecipe request11 = new com.rb.testClient.RecipeStub.RateRecipe();
+				request11.setRecipeId(2);
+				request11.setRate(3);
+				// Invoking the service
+
+				com.rb.testClient.RecipeStub.RateRecipeResponse response11 = stub
+						.rateRecipe(request11);
+				System.out.println("rate recipe(RecipeId=2):" + response11.get_return());
 	}
 
 }
