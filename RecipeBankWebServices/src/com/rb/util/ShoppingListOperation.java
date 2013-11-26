@@ -1,8 +1,13 @@
 package com.rb.util;
+/*
+author:Huijun Sun
 
+*/
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import java.sql.Statement;
 
 public class ShoppingListOperation {
 
@@ -45,5 +50,59 @@ public class ShoppingListOperation {
 		
 		
 		return result;
+	}
+	public static int deleteOneIngredientInShoppingList(int shoppingIngredientId)
+	{
+		int result=0;
+		Connection connection = null;
+		PreparedStatement st = null;
+		ResultSet rs=null;
+		String sqlString="delete from recipebank.shoppinglist where ShoppingIngredientsId=?;";
+		try {
+			connection=ConnectDB.getConnection();
+			st=connection.prepareStatement(sqlString);
+			st.setInt(1, shoppingIngredientId);
+			if(st.executeUpdate()>0)
+			{
+				result=1;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			ConnectDB.closeConnection(connection); 
+		}
+		return result;
+	}
+	public static boolean deleteIngredientsInShoppingList(int[] ids)
+	{
+		boolean result=false;
+		Connection connection = null;
+		String sqlString="delete from recipebank.shoppinglist where ShoppingIngredientsId in (";
+		try {
+			connection=ConnectDB.getConnection();
+			Statement statement=connection.createStatement();
+			for (int i = 0; i < ids.length; i++) {
+				if (i==ids.length-1) {
+					sqlString+=ids[i]+")";
+				}else {
+					sqlString+=ids[i]+",";
+				}
+			}
+			System.out.println(sqlString);
+			result=statement.execute(sqlString);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			ConnectDB.closeConnection(connection); 
+		}
+		return result;
+		
 	}
 }
