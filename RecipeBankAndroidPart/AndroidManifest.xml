@@ -40,6 +40,14 @@
             android:name="com.rb.activities.SearchResultActivity"
             android:label="@string/title_activity_search_result" >
         </activity>
+        <activity
+            android:name="com.rb.activities.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.StepsActivity"
+            android:label="@string/title_activity_steps" >
+        </activity>
     </application>
 
 </manifest>

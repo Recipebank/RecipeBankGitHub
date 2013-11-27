@@ -35,11 +35,11 @@ import com.rb.activities.R;
 
 public class HomPageActivity extends Activity {
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.1.77:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/getRecipesAsYouWant";
 	private final String METHOD_NAME = "getRecipesAsYouWant";
 	
-	private final String URLCat = "http://10.24.1.77:8088/RecipeBankWebServices1/services/Category?wsdl";
+	private final String URLCat = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Category?wsdl";
 	private final String SOAP_ACTIONCat = "http://webServices.rb.com/getAllCategories";
 	private final String METHOD_NAMECat = "getAllCategories";
 	private String TAG = "Reci";
