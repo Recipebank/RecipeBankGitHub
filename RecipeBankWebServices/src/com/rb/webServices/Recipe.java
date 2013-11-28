@@ -20,7 +20,7 @@ public class Recipe {
 	PreparedStatement st = null;
 	ResultSet rs = null;
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String getAllRecipes() {
 		String sql = "select * from recipebank.recipe where RecipeState = 0";
 		try {
@@ -37,7 +37,7 @@ public class Recipe {
 
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String getRecipeByAccount(int accountId) {
 		String recipeString = "";
 		String sql = "select RecipeId,RecipeTitle,Description,rate,RecipeState,a.AccountId,NickName from recipebank.recipe r join recipebank.account a on r.AccountID=a.AccountId where r.RecipeState = 0 and a.AccountId="
@@ -57,7 +57,7 @@ public class Recipe {
 
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String getRecipeByAccountWithAmount(int accountId, int amount) {
 		String recipeString = "";
 		String sql = "select RecipeId,RecipeTitle,Description,rate,RecipeState,a.AccountId,NickName "
@@ -77,12 +77,14 @@ public class Recipe {
 		return recipeString;
 
 	}
-	//anthor: Huijun Sun
+	// anthor: Huijun Sun
 	public String getRecipesAsYouWant(int amount) {
 		String recipeString = "";
 		String sqlString = "select a.AccountId,NickName,RecipeId,RecipeTitle,Description,rate,RecipeState,photo "
 				+ "from recipebank.recipe r join recipebank.account a on r.AccountID=a.AccountId "
-				+ "order by RecipeId desc limit " + amount;
+				+ "where recipeState=0 "
+				+ "order by RecipeId desc limit "
+				+ amount;
 		try {
 			conn = ConnectDB.getConnection();
 			st = conn.prepareStatement(sqlString);
@@ -97,7 +99,7 @@ public class Recipe {
 		return recipeString;
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String getRecipeDetails(int recipeId) {
 
 		String sql = "select * from recipebank.recipestep s inner join recipebank.recipe r on s.RecipeId = r.RecipeId where r.RecipeState=0 and s.RecipeId="
@@ -114,9 +116,9 @@ public class Recipe {
 		}
 		return recipeString;
 	}
-	
-	//Create by Dongchao Feng
-	public String getRecipeFromFavouriteList(int recipeId){
+
+	// Create by Dongchao Feng
+	public String getRecipeFromFavouriteList(int recipeId) {
 		String sql = "select * from recipebank.recipe where RecipeState=0 and RecipeId ="
 				+ recipeId;
 		try {
@@ -133,7 +135,7 @@ public class Recipe {
 		return recipeString;
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String searchRecipeById(int recipeId) {
 		String sql = "select * from recipe inner join recipecategory on recipe.RecipeId = recipecategory.RecipeId inner join category on recipecategory.CategoryId = category.CategoryId where recipe.RecipeState=0 and recipe.RecipeId="
 				+ recipeId;
@@ -151,7 +153,7 @@ public class Recipe {
 		return recipeString;
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String searchRecipeByCategory(int categoryId) {
 		String sql = "select * from recipe inner join recipecategory on recipe.RecipeId = recipecategory.RecipeId inner join category on recipecategory.CategoryId = category.CategoryId where recipe.RecipeState=0 and category.CategoryId="
 				+ categoryId;
@@ -168,7 +170,7 @@ public class Recipe {
 		return recipeString;
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String searchRecipeByRate(int rate) {
 		String sql = "select * from recipe inner join recipecategory on recipe.RecipeId = recipecategory.RecipeId inner join category on recipecategory.CategoryId = category.CategoryId where  recipe.RecipeState=0 and recipe.Rate="
 				+ rate;
@@ -185,7 +187,7 @@ public class Recipe {
 		return recipeString;
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String searchRecipeByState(int state) {
 		String sql = "select * from recipe inner join recipecategory on recipe.RecipeId = recipecategory.RecipeId inner join category on recipecategory.CategoryId = category.CategoryId where recipe.RecipeState="
 				+ state;
@@ -202,7 +204,7 @@ public class Recipe {
 		return recipeString;
 	}
 
-	//Create by Dongchao Feng
+	// Create by Dongchao Feng
 	public String searchRecipeByKeyWord(String keyword) {
 		String sql = "select * from recipe inner join recipecategory on recipe.RecipeId = recipecategory.RecipeId inner join category on recipecategory.CategoryId = category.CategoryId where  recipe.RecipeState=0 and recipe.RecipeTitle LIKE '%"
 				+ keyword
@@ -223,10 +225,9 @@ public class Recipe {
 		}
 		return recipeString;
 	}
-	
-	//Create by Dongchao Feng
-	public String getRecipeIngredient(int recipeId)
-	{
+
+	// Create by Dongchao Feng
+	public String getRecipeIngredient(int recipeId) {
 		String sql = "select recipe.RecipeId,recipe.RecipeTitle,a.IngredientId,a.ingredientMeasure,a.IngredientQuanlity,b.IngredientName from recipebank.recipe inner join recipebank.recipeingredientlist a on recipe.RecipeId = a.RecipeId inner join recipebank.ingredient b on a.ingredientId = b.ingredientId where  recipe.RecipeState=0 and recipe.RecipeId="
 				+ recipeId;
 		try {
@@ -242,8 +243,8 @@ public class Recipe {
 
 		return recipeString;
 	}
-	
-//anthor: Huijun Sun
+
+	// anthor: Huijun Sun
 	public String CreateRecipe(String recipeString) {
 		JSONObject recipeJsonObject = new JSONObject();
 		HashMap<String, String> recipeMap = ProduceJSON
@@ -258,7 +259,8 @@ public class Recipe {
 
 		return recipeJsonObject.toString();
 	}
-	//anthor: Huijun Sun
+
+	// anthor: Huijun Sun
 	public String insertIngredients(String ingStr) {
 		JSONObject jsonObject = new JSONObject();
 		ArrayList<HashMap<String, String>> ingList = ProduceJSON
@@ -277,9 +279,9 @@ public class Recipe {
 		}
 		return jsonObject.toString();
 	}
-	//anthor: Huijun Sun
-	public String insertRecipeSteps(String stepString)
-	{
+
+	/*// anthor: Huijun Sun
+	public String insertRecipeSteps(String stepString) {
 		JSONObject jsonObject = new JSONObject();
 		ArrayList<HashMap<String, String>> stepsList = ProduceJSON
 				.parseJsonArrayToArrylist(stepString);
@@ -296,12 +298,27 @@ public class Recipe {
 			e.printStackTrace();
 		}
 		return jsonObject.toString();
-		
+
+	}*/
+	//anthor: Huijun Sun
+	public String insertRecipeStep(String stepObject) {
+		String resultString="failed!";
+
+		try {
+			if (RecipeOperation.insertStep(ProduceJSON.parseJsonObjectToHashMap(stepObject))) {
+				
+				resultString="Success!";
+
+			} 
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return resultString;
+
 	}
-	
-	//Dongchao Feng
-	public int rateRecipe(int recipeId, int rate)
-	{
+	// Dongchao Feng
+	public int rateRecipe(int recipeId, int rate) {
 		int result = 0;
 		Connection conn = null;
 		try {
@@ -316,7 +333,7 @@ public class Recipe {
 			st = conn.prepareStatement(sql);
 			st.setInt(1, rate);
 			st.setInt(2, recipeId);
-			rs=st.executeQuery();
+			rs = st.executeQuery();
 			if (rs.next()) {
 				result = rate;
 			} else {
@@ -329,7 +346,7 @@ public class Recipe {
 		}
 
 		return result;
-		
+
 	}
 
 }

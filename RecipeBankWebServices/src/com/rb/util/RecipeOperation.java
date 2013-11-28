@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.kobjects.util.Strings;
+
 //owner: Huijun Sun
 public class RecipeOperation {
 
@@ -14,10 +16,9 @@ public class RecipeOperation {
 
 		Connection connection = null;
 		PreparedStatement st = null;
-		ResultSet rs=null;
+		ResultSet rs = null;
 		int recipeId = 0;
 		String sql = "insert into recipebank.recipe (accountid,recipeTitle,Description,photo) values(?,?,?,?);";
-				
 
 		try {
 
@@ -32,7 +33,7 @@ public class RecipeOperation {
 			st.executeUpdate();
 			rs = st.executeQuery("select LAST_INSERT_ID() from recipebank.recipe limit 1;");
 			if (rs.next()) {
-				recipeId=rs.getInt(1);
+				recipeId = rs.getInt(1);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -80,8 +81,30 @@ public class RecipeOperation {
 		return state;
 	}
 
-	public static boolean insertSteps(
-			ArrayList<HashMap<String, String>> stepsList) {
+	/*
+	 * public static boolean insertSteps( ArrayList<HashMap<String, String>>
+	 * stepsList) { boolean state = false;
+	 * 
+	 * Connection connection = null; PreparedStatement st = null;
+	 * 
+	 * try { connection = ConnectDB.getConnection();
+	 * 
+	 * String sqlString = ""; for (int i = 0; i < stepsList.size(); i++) {
+	 * HashMap<String, String> stepMaps = stepsList.get(i); sqlString +=
+	 * "insert into recipebank.recipestep (StepDesc,StepPhoto,RecipeId,stepTime) "
+	 * + "values('" + stepMaps.get("StepDesc") + "','" +
+	 * stepMaps.get("StepPhoto").getBytes() + "'," + stepMaps.get("RecipeId") +
+	 * "," + stepMaps.get("stepTime") + ");"; }
+	 * 
+	 * System.out.println(sqlString); st.addBatch(sqlString); st.executeBatch();
+	 * } catch (Exception e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } finally { ConnectDB.closeConnection(connection); }
+	 * 
+	 * return state;
+	 * 
+	 * }
+	 */
+	public static boolean insertStep(HashMap<String, String> stepmMap) {
 		boolean state = false;
 
 		Connection connection = null;
@@ -91,22 +114,23 @@ public class RecipeOperation {
 			connection = ConnectDB.getConnection();
 
 			String sqlString = "";
-			for (int i = 0; i < stepsList.size(); i++) {
-				HashMap<String, String> stepMaps = stepsList.get(i);
-				sqlString += "insert into recipebank.recipestep (StepDesc,StepPhoto,RecipeId,stepTime) "
-						+ "values('"
-						+ stepMaps.get("StepDesc")
-						+ "','"
-						+ stepMaps.get("StepPhoto").getBytes()
-						+ "',"
-						+ stepMaps.get("RecipeId")
-						+ ","
-						+ stepMaps.get("stepTime") + ");";
-			}
+
+			sqlString += "insert into recipebank.recipestep (StepDesc,StepPhoto,RecipeId,stepTime) "
+					+ "values('"
+					+ stepmMap.get("StepDesc")
+					+ "','"
+					+ stepmMap.get("StepPhoto").getBytes()
+					+ "',"
+					+ stepmMap.get("RecipeId")
+					+ ","
+					+ stepmMap.get("stepTime")
+					+ ");";
 
 			System.out.println(sqlString);
-			st.addBatch(sqlString);
-			st.executeBatch();
+			st = connection.prepareStatement(sqlString);
+			if (st.executeUpdate() > 0) {
+				state = true;
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -117,5 +141,34 @@ public class RecipeOperation {
 		return state;
 
 	}
-	
+
+	public static boolean checkRecipeState(int recipeId) {
+		boolean result = false;
+		Connection connection = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		String sqlString = "select recipeState from recipebank.recipe where recipeId=?";
+		try {
+
+			connection = ConnectDB.getConnection();
+			st = connection.prepareStatement(sqlString);
+			st.setInt(1, recipeId);
+			rs = st.executeQuery();
+			if (rs.next()) {
+				if (rs.getInt("recipeState") == 0) {
+					result = true;
+				}
+
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			ConnectDB.closeConnection(connection);
+		}
+
+		return result;
+	}
+
 }
