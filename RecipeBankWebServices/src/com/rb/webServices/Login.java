@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.rb.util.AccountOperation;
 import com.rb.util.ConnectDB;
 import com.rb.util.ProduceJSON;
 //Huijun Sun
@@ -113,5 +114,14 @@ public class Login {
 	    	ConnectDB.closeConnection(conn);
 	    }
 		return userInfoString;
+	}
+	public String createNewAccount(String jsonObject)
+	{
+		String result="Failed!";
+		int i=AccountOperation.createAccount(ProduceJSON.parseJsonObjectToHashMap(jsonObject));
+		if (i>0) {
+			result="Success!";
+		}
+		return result;
 	}
 }
