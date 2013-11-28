@@ -114,6 +114,24 @@ public class Recipe {
 		}
 		return recipeString;
 	}
+	
+	//Create by Dongchao Feng
+	public String getRecipeFromFavouriteList(int recipeId){
+		String sql = "select * from recipebank.recipe where RecipeId ="
+				+ recipeId;
+		try {
+			conn = ConnectDB.getConnection();
+			st = conn.prepareStatement(sql);
+			rs = st.executeQuery();
+			recipeString = ProduceJSON.resultSetToJsonArray(rs);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectDB.closeConnection(conn);
+		}
+
+		return recipeString;
+	}
 
 	//Create by Dongchao Feng
 	public String searchRecipeById(int recipeId) {

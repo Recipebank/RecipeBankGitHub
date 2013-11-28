@@ -17,7 +17,7 @@ public class Favourite {
 			conn = ConnectDB.getConnection();
 			PreparedStatement st = null;
 			ResultSet rs = null;
-			String sql = "SELECT * FROM recipebank.favourite where AccountId = "
+			String sql = "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where f.AccountId = "
 					+ accountId;
 			st = conn.prepareStatement(sql);
 			rs = st.executeQuery();
@@ -38,7 +38,7 @@ public class Favourite {
 			conn = ConnectDB.getConnection();
 			PreparedStatement st = null;
 			ResultSet rs = null;
-			String sql = "SELECT * FROM recipebank.favourite where RecipeId ="
+			String sql = "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where f.RecipeId ="
 					+ recipeId;
 			st = conn.prepareStatement(sql);
 			rs = st.executeQuery();
