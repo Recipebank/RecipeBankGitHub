@@ -260,7 +260,7 @@ public class Recipe {
 		return recipeJsonObject.toString();
 	}
 
-	// anthor: Huijun Sun
+/*	// anthor: Huijun Sun
 	public String insertIngredients(String ingStr) {
 		JSONObject jsonObject = new JSONObject();
 		ArrayList<HashMap<String, String>> ingList = ProduceJSON
@@ -278,6 +278,21 @@ public class Recipe {
 			e.printStackTrace();
 		}
 		return jsonObject.toString();
+	}*/
+	//author:Huijun Sun
+	public String insertIngredient(String ingredientObject) {
+		String result="Failed!";
+		try {
+			if (RecipeOperation.InsertIngredient(ProduceJSON.parseJsonObjectToHashMap(ingredientObject))) {
+
+				result="Success!";
+
+			} 
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	/*// anthor: Huijun Sun

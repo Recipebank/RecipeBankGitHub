@@ -178,7 +178,8 @@ public class RecipeClient {
 		 * .rateRecipe(request11); System.out.println("rate recipe(RecipeId=2):"
 		 * + response11.get_return());
 		 */
-		com.rb.testClient.RecipeStub.InsertRecipeStep request = new com.rb.testClient.RecipeStub.InsertRecipeStep();
+		//test InsertRecipeStep
+		/*com.rb.testClient.RecipeStub.InsertRecipeStep request = new com.rb.testClient.RecipeStub.InsertRecipeStep();
 		JSONObject stepObject = new JSONObject();
 		stepObject.put("RecipeId", 12);
 		stepObject.put("StepDesc", "adsfasfasfadsf");
@@ -186,6 +187,17 @@ public class RecipeClient {
 		stepObject.put("stepTime", 5.00);
 		request.setStepObject(stepObject.toString());
 		com.rb.testClient.RecipeStub.InsertRecipeStepResponse response = stub.insertRecipeStep(request);
+		System.out.println("Response:"+ response.get_return());*/
+		
+		//test InsertIngredient
+		com.rb.testClient.RecipeStub.InsertIngredient request = new com.rb.testClient.RecipeStub.InsertIngredient();
+		JSONObject stepObject = new JSONObject();
+		stepObject.put("RecipeId", 12);
+		stepObject.put("IngredientName", "DouFu");
+		stepObject.put("ingredientMeasure", "lb");
+		stepObject.put("IngredientQuanlity", 5.00);
+		request.setIngredientObject(stepObject.toString());
+		com.rb.testClient.RecipeStub.InsertIngredientResponse response = stub.insertIngredient(request);
 		System.out.println("Response:"+ response.get_return());
 	}
 

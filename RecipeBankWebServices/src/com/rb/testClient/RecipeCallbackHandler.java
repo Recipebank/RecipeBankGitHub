@@ -285,19 +285,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for insertIngredients method
-            * override this method for handling normal response from insertIngredients operation
+            * auto generated Axis2 call back method for insertIngredient method
+            * override this method for handling normal response from insertIngredient operation
             */
-           public void receiveResultinsertIngredients(
-                    com.rb.testClient.RecipeStub.InsertIngredientsResponse result
+           public void receiveResultinsertIngredient(
+                    com.rb.testClient.RecipeStub.InsertIngredientResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from insertIngredients operation
+           * override this method for handling error response from insertIngredient operation
            */
-            public void receiveErrorinsertIngredients(java.lang.Exception e) {
+            public void receiveErrorinsertIngredient(java.lang.Exception e) {
             }
                 
 

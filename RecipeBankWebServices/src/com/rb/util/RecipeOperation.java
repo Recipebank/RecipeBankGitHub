@@ -3,10 +3,8 @@ package com.rb.util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.sql.Statement;
 import java.util.HashMap;
-
-import org.kobjects.util.Strings;
 
 //owner: Huijun Sun
 public class RecipeOperation {
@@ -45,32 +43,62 @@ public class RecipeOperation {
 		return recipeId;
 	}
 
-	public static boolean InsertIngredients(
-			ArrayList<HashMap<String, String>> ingredients) {
-		boolean state = false;
+	/*
+	 * public static boolean InsertIngredients( ArrayList<HashMap<String,
+	 * String>> ingredients) { boolean state = false; Connection connection =
+	 * null; PreparedStatement st = null;
+	 * 
+	 * try { connection = ConnectDB.getConnection();
+	 * 
+	 * String sqlString = ""; for (int i = 0; i < ingredients.size(); i++) {
+	 * HashMap<String, String> ingMap = ingredients.get(i); sqlString +=
+	 * "insert into recipebank.ingredient (ingredientName) values('" +
+	 * ingMap.get("ingredientName") + "');"; sqlString +=
+	 * "insert into recipebank.recipeingredientlist (RecipeId,ingredientId,ingredientMeasure,ingredientQuanlity) "
+	 * + "values(" + ingMap.get("RecipeId") +
+	 * ",(select LAST_INSERT_ID() from recipebank.ingredient limit 1 ),'" +
+	 * ingMap.get("ingredientMeasure") + "'," + ingMap.get("ingredientQuanlity")
+	 * + ");"; }
+	 * 
+	 * System.out.println(sqlString); st.addBatch(sqlString); st.executeBatch();
+	 * } catch (Exception e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } finally { ConnectDB.closeConnection(connection); }
+	 * 
+	 * return state; }
+	 */
+	public static boolean InsertIngredient(HashMap<String, String> ingMap) {
+		boolean state = true;
 		Connection connection = null;
-		PreparedStatement st = null;
+		Statement st = null;
 
 		try {
 			connection = ConnectDB.getConnection();
-
+			connection.setAutoCommit(false);
 			String sqlString = "";
-			for (int i = 0; i < ingredients.size(); i++) {
-				HashMap<String, String> ingMap = ingredients.get(i);
-				sqlString += "insert into recipebank.ingredient (ingredientName) values('"
-						+ ingMap.get("ingredientName") + "');";
-				sqlString += "insert into recipebank.recipeingredientlist (RecipeId,ingredientId,ingredientMeasure,ingredientQuanlity) "
-						+ "values("
-						+ ingMap.get("RecipeId")
-						+ ",(select LAST_INSERT_ID() from recipebank.ingredient limit 1 ),'"
-						+ ingMap.get("ingredientMeasure")
-						+ "',"
-						+ ingMap.get("ingredientQuanlity") + ");";
-			}
+			st = connection.createStatement();
+			sqlString += "insert into recipebank.ingredient (ingredientName) values('"
+					+ ingMap.get("IngredientName") + "');";
+			st.addBatch(sqlString);
+			sqlString = "insert into recipebank.recipeingredientlist (RecipeId,ingredientId,ingredientMeasure,ingredientQuanlity) "
+					+ "values("
+					+ ingMap.get("RecipeId")
+					+ ",(select LAST_INSERT_ID() from recipebank.ingredient limit 1 ),'"
+					+ ingMap.get("ingredientMeasure")
+					+ "',"
+					+ ingMap.get("IngredientQuanlity") + ");";
 
 			System.out.println(sqlString);
+			
 			st.addBatch(sqlString);
-			st.executeBatch();
+			int result[] = st.executeBatch();
+			for (int i = 0; i < result.length; i++) {
+				if (result[i] < 0) {
+					state = false;
+				}
+			}
+			if (state == true) {
+				connection.commit();
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
