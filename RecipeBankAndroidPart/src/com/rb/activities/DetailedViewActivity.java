@@ -14,6 +14,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import com.rb.util.Ipconfig;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,9 +29,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailedViewActivity extends Activity {
-	
+	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/searchRecipeById";
 	private final String METHOD_NAME = "searchRecipeById";
 	private String TAG = "Reci";

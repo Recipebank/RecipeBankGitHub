@@ -14,6 +14,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import com.rb.util.Ipconfig;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -31,15 +33,15 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import com.rb.activities.R;
 
 public class HomPageActivity extends Activity {
+	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/getRecipesAsYouWant";
 	private final String METHOD_NAME = "getRecipesAsYouWant";
 	
-	private final String URLCat = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Category?wsdl";
+	private final String URLCat = "http://"+ipaddress+"/RecipeBankWebServices/services/Category?wsdl";
 	private final String SOAP_ACTIONCat = "http://webServices.rb.com/getAllCategories";
 	private final String METHOD_NAMECat = "getAllCategories";
 	private String TAG = "Reci";
@@ -74,7 +76,7 @@ public class HomPageActivity extends Activity {
 		setContentView(R.layout.activity_se);
 		asyncCall task = new asyncCall();
 		task.execute();
-		ll=(LinearLayout) findViewById(R.id.inscroll);
+	
 		spinnerCat=(Spinner) findViewById(R.id.spinner1);
 		asyncCallCat task1 = new asyncCallCat();
 		task1.execute();
@@ -93,16 +95,7 @@ public class HomPageActivity extends Activity {
  		
  		et=(EditText) findViewById(R.id.editText1);
  		
- 		search.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
-				intent.putExtra("searchKey",et.getText().toString());
-				startActivity(intent);
-				
-			}
-		});
+ 	
 	}
 
 	@Override
@@ -110,6 +103,47 @@ public class HomPageActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	public void Search(View view)
+	{
+		
+		Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+		intent.putExtra("searchKey",et.getText().toString());
+		startActivity(intent);
+		
+	}
+	
+	public void DetailedView(View view)
+	{
+		if(view.equals(im1))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv1.getText().toString());
+			startActivity(intent);
+		}
+		else if(view.equals(im2))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv2.getText().toString());
+			startActivity(intent);
+		}
+		else if(view.equals(im3))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv3.getText().toString());
+			startActivity(intent);
+		}
+		else if(view.equals(im4))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv4.getText().toString());
+			startActivity(intent);
+		}
 	}
 	
 	/***************/

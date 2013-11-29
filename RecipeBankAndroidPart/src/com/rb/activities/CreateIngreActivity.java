@@ -1,11 +1,7 @@
 package com.rb.activities;
 
-import java.io.ByteArrayInputStream;
-import java.util.ArrayList;
-
-import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
-import org.kobjects.base64.Base64;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
@@ -13,73 +9,90 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import com.rb.util.Ipconfig;
-
-
-
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.EditText;
 
-public class StepsActivity extends Activity {
+
+import com.rb.util.Ipconfig;
+
+public class CreateIngreActivity extends Activity {
+	String recipeId=null;
 	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
 	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Recipe?wsdl";
-	private final String SOAP_ACTION = "http://webServices.rb.com/getRecipeDetails";
-	private final String METHOD_NAME = "getRecipeDetails";
-	private String TAG = "Reci";
-	ArrayList<String> al=new ArrayList<String>();
-	int recipeId=0;
-	ListView lv=null;
+	private final String SOAP_ACTION = "http://webServices.rb.com/insertIngredient";
+	private final String METHOD_NAME = "insertIngredient";
+	private String TAG = "Incredi";
+	EditText et1=null;
+	EditText et2=null;
+	String etval1=null;
+	String etval2=null;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_steps);
+		setContentView(R.layout.activity_create_ingre);
 		Intent intent=getIntent();
-		recipeId=Integer.parseInt(intent.getStringExtra("recipeid"));
-		lv=(ListView) findViewById(R.id.listView1);
-		asyncCallCat task = new asyncCallCat();
-		task.execute();
+		recipeId=intent.getStringExtra("recipeId");
+		et1=(EditText) findViewById(R.id.editText1);
+		et2=(EditText) findViewById(R.id.editText2);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.steps, menu);
+		getMenuInflater().inflate(R.menu.create_ingre, menu);
 		return true;
+	}
+	
+	public void AddIngre(View view)
+	{
+		finish();
+		startActivity(getIntent());
+	}
+	
+	public void NextPage(View view)
+	{
+		
+		Intent intent=new Intent(CreateIngreActivity.this,AddStepsActivity.class);
+		intent.putExtra("recipeId", recipeId);
+		startActivity(intent);
+		
+		
+	}
+	public void InsertIngre(View view)
+	{
+		AsyncCall task = new AsyncCall();
+		task.execute();
 	}
 	
 	/***************/
 
 
-	private class asyncCallCat extends AsyncTask<Void, Void, Void> {
+	private class AsyncCall extends AsyncTask<Void, Void, Void> {
 
 		@Override
 		protected Void doInBackground(Void... params) {
 			Log.i(TAG, "doInBackground");
-			getRecipeSteps();
+			try {
+				SetIngredients();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
 			return null;
 		}
 
 		@Override
 		protected void onPostExecute(Void result) {
-			
-			 ArrayAdapter<String> arrayAdapter =      
-	                 new ArrayAdapter<String>(StepsActivity.this,android.R.layout.simple_list_item_1, al);
+				
 	                
-	                lv.setAdapter(arrayAdapter);
-	                
-			 
-	            
-	                 
 			Log.i(TAG, "onPostExecute");
 		}
 
@@ -95,16 +108,26 @@ public class StepsActivity extends Activity {
 
 	}
 
-	/***************/
-	public void getRecipeSteps()
+	
+	/**
+	 * @throws JSONException *************/
+	
+	public void SetIngredients() throws JSONException
 	{
+		etval1=et1.getText().toString();
+		etval2=et2.getText().toString();
+	
+		
+		JSONObject json=new JSONObject();
+		json.put("ingredientMeasure", etval1);
+		json.put("IngredientQuanlity", etval2);
+		json.put("RecipeId", recipeId);
+		
 		SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 		PropertyInfo KeyProp = new PropertyInfo();
-		KeyProp.setName("recipeId");// Define the variable name in the web
-		// service method
-		
-		KeyProp.setValue(recipeId);// set value for userName variable
-		KeyProp.setType(Integer.class);// Define the type of the variable
+		KeyProp.setName("ingredientObject");// Define the variable name in the web// service method	
+		KeyProp.setValue(json.toString());// set value for userName variable
+		KeyProp.setType(String.class);// Define the type of the variable
 		request.addProperty(KeyProp);// Pass properties to the variable
 		
 	
@@ -115,26 +138,11 @@ public class StepsActivity extends Activity {
 		HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
 
 		try {
+			
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
 			Log.i(TAG, "Result " + response);
 			
-			JSONArray jsonArray=new JSONArray(response.toString());
-			System.out.println("jsonArray.length:"+jsonArray.length());
-			for (int i = 0; i < jsonArray.length(); i++) {
-				
-				JSONObject jObject=jsonArray.getJSONObject(i);
-				//System.out.println("RecipeId="+jObject.get("RecipeId"));
-//				System.out.println("photo="+jObject.get("photo"));
-				
-				al.add(jObject.get("StepDesc").toString());
-				
-				
-				
-				
-			}
-			// result.setText(response.toString());
-			// result.setText("OK");
 
 		} catch (Exception e) {
 			Log.e(TAG, "Error: " + e.getMessage());

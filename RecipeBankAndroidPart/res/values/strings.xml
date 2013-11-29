@@ -10,5 +10,8 @@
     <string name="title_activity_search_result">SearchResultActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_steps">StepsActivity</string>
+    <string name="title_activity_create_recipe">CreateRecipeActivity</string>
+    <string name="title_activity_create_ingre">CreateIngreActivity</string>
+    <string name="title_activity_add_steps">AddStepsActivity</string>
 
 </resources>
