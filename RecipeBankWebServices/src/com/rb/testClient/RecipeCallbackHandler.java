@@ -300,6 +300,22 @@
             public void receiveErrorinsertIngredient(java.lang.Exception e) {
             }
                 
+           /**
+            * auto generated Axis2 call back method for deleteRecipe method
+            * override this method for handling normal response from deleteRecipe operation
+            */
+           public void receiveResultdeleteRecipe(
+                    com.rb.testClient.RecipeStub.DeleteRecipeResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from deleteRecipe operation
+           */
+            public void receiveErrordeleteRecipe(java.lang.Exception e) {
+            }
+                
 
 
     }

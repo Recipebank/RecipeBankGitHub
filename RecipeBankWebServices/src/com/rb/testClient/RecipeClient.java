@@ -190,7 +190,7 @@ public class RecipeClient {
 		System.out.println("Response:"+ response.get_return());*/
 		
 		//test InsertIngredient
-		com.rb.testClient.RecipeStub.InsertIngredient request = new com.rb.testClient.RecipeStub.InsertIngredient();
+		/*com.rb.testClient.RecipeStub.InsertIngredient request = new com.rb.testClient.RecipeStub.InsertIngredient();
 		JSONObject stepObject = new JSONObject();
 		stepObject.put("RecipeId", 12);
 		stepObject.put("IngredientName", "DouFu");
@@ -198,6 +198,14 @@ public class RecipeClient {
 		stepObject.put("IngredientQuanlity", 5.00);
 		request.setIngredientObject(stepObject.toString());
 		com.rb.testClient.RecipeStub.InsertIngredientResponse response = stub.insertIngredient(request);
+		System.out.println("Response:"+ response.get_return());*/
+		
+		//test deleteRecipe
+		com.rb.testClient.RecipeStub.DeleteRecipe request = new com.rb.testClient.RecipeStub.DeleteRecipe();
+		JSONObject stepObject = new JSONObject();
+		stepObject.put("RecipeId", 2);
+		request.setJsonObject(stepObject.toString());
+		com.rb.testClient.RecipeStub.DeleteRecipeResponse response = stub.deleteRecipe(request);
 		System.out.println("Response:"+ response.get_return());
 	}
 

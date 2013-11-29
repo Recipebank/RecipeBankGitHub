@@ -77,6 +77,7 @@ public class Recipe {
 		return recipeString;
 
 	}
+
 	// anthor: Huijun Sun
 	public String getRecipesAsYouWant(int amount) {
 		String recipeString = "";
@@ -260,34 +261,27 @@ public class Recipe {
 		return recipeJsonObject.toString();
 	}
 
-/*	// anthor: Huijun Sun
-	public String insertIngredients(String ingStr) {
-		JSONObject jsonObject = new JSONObject();
-		ArrayList<HashMap<String, String>> ingList = ProduceJSON
-				.parseJsonArrayToArrylist(ingStr);
-		try {
-			if (RecipeOperation.InsertIngredients(ingList)) {
-
-				jsonObject.put("result", 1);
-
-			} else {
-				jsonObject.put("result", 0);
-			}
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return jsonObject.toString();
-	}*/
-	//author:Huijun Sun
+	/*
+	 * // anthor: Huijun Sun public String insertIngredients(String ingStr) {
+	 * JSONObject jsonObject = new JSONObject(); ArrayList<HashMap<String,
+	 * String>> ingList = ProduceJSON .parseJsonArrayToArrylist(ingStr); try {
+	 * if (RecipeOperation.InsertIngredients(ingList)) {
+	 * 
+	 * jsonObject.put("result", 1);
+	 * 
+	 * } else { jsonObject.put("result", 0); } } catch (JSONException e) { //
+	 * TODO Auto-generated catch block e.printStackTrace(); } return
+	 * jsonObject.toString(); }
+	 */
+	// author:Huijun Sun
 	public String insertIngredient(String ingredientObject) {
-		String result="Failed!";
+		String result = "Failed!";
 		try {
-			if (RecipeOperation.InsertIngredient(ProduceJSON.parseJsonObjectToHashMap(ingredientObject))) {
+			if (RecipeOperation.InsertIngredient(ProduceJSON
+					.parseJsonObjectToHashMap(ingredientObject))) {
 
-				result="Success!";
-
-			} 
+				result = "Success!";
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -295,36 +289,31 @@ public class Recipe {
 		return result;
 	}
 
-	/*// anthor: Huijun Sun
-	public String insertRecipeSteps(String stepString) {
-		JSONObject jsonObject = new JSONObject();
-		ArrayList<HashMap<String, String>> stepsList = ProduceJSON
-				.parseJsonArrayToArrylist(stepString);
-		try {
-			if (RecipeOperation.insertSteps(stepsList)) {
-
-				jsonObject.put("result", 1);
-
-			} else {
-				jsonObject.put("result", 0);
-			}
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return jsonObject.toString();
-
-	}*/
-	//anthor: Huijun Sun
+	/*
+	 * // anthor: Huijun Sun public String insertRecipeSteps(String stepString)
+	 * { JSONObject jsonObject = new JSONObject(); ArrayList<HashMap<String,
+	 * String>> stepsList = ProduceJSON .parseJsonArrayToArrylist(stepString);
+	 * try { if (RecipeOperation.insertSteps(stepsList)) {
+	 * 
+	 * jsonObject.put("result", 1);
+	 * 
+	 * } else { jsonObject.put("result", 0); } } catch (JSONException e) { //
+	 * TODO Auto-generated catch block e.printStackTrace(); } return
+	 * jsonObject.toString();
+	 * 
+	 * }
+	 */
+	// anthor: Huijun Sun
 	public String insertRecipeStep(String stepObject) {
-		String resultString="failed!";
+		String resultString = "failed!";
 
 		try {
-			if (RecipeOperation.insertStep(ProduceJSON.parseJsonObjectToHashMap(stepObject))) {
-				
-				resultString="Success!";
+			if (RecipeOperation.insertStep(ProduceJSON
+					.parseJsonObjectToHashMap(stepObject))) {
 
-			} 
+				resultString = "Success!";
+
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -332,6 +321,7 @@ public class Recipe {
 		return resultString;
 
 	}
+
 	// Dongchao Feng
 	public int rateRecipe(int recipeId, int rate) {
 		int result = 0;
@@ -362,6 +352,24 @@ public class Recipe {
 
 		return result;
 
+	}
+
+	// Author:Huijun Sun
+	// json object ["RecipeId",recipeId]
+	public String deleteRecipe(String jsonObject) {
+		String result = "Failed!";
+		try {
+			if (RecipeOperation.deleteRecipe(new JSONObject(jsonObject)
+					.getInt("RecipeId"))) {
+
+				result = "Success!";
+
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }

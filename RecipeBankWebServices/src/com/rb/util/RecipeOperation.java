@@ -198,5 +198,31 @@ public class RecipeOperation {
 
 		return result;
 	}
+	public static boolean deleteRecipe(int recipeId)
+	{
+		boolean result=false;
+		Connection connection = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		String sqlString = "update recipebank.recipe set RecipeState=1 where RecipeId=?";
+		try {
+
+			connection = ConnectDB.getConnection();
+			st = connection.prepareStatement(sqlString);
+			st.setInt(1, recipeId);
+			if(st.executeUpdate()>0)
+			{
+				result=true;
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			ConnectDB.closeConnection(connection);
+		}
+
+		return result;
+	}
 
 }
