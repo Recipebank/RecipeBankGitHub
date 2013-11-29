@@ -9,7 +9,7 @@ import com.rb.util.ProduceJSON;
 
 public class Following {
 
-	//Dongchao Feng
+	// Dongchao Feng
 	public int checkFolllowState(int accountId, int friendId) {
 		int result = 0;
 		Connection conn = null;
@@ -36,6 +36,9 @@ public class Following {
 		return result;
 	}
 
+	// author:Dongchao Feng
+	// Edited by Huijun Sun , add members' information which followed another
+	// member.
 	public String getFollowingList(int accountId) {
 		String result = "";
 		Connection conn = null;
@@ -43,8 +46,10 @@ public class Following {
 			conn = ConnectDB.getConnection();
 			PreparedStatement st = null;
 			ResultSet rs = null;
-			String sql = "select * from recipebank.followlist where AccountId="
-					+ accountId + " and FollowState=0";
+			String sql = "select f.accountid,friendId,a.nickname "
+					+ "from recipebank.followlist f "
+					+ "join recipebank.account a on f.friendId=a.accountid "
+					+ "where f.AccountId=" + accountId + " and FollowState=0";
 			st = conn.prepareStatement(sql);
 			rs = st.executeQuery();
 			result = ProduceJSON.resultSetToJsonArray(rs);

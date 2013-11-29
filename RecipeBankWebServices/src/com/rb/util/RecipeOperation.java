@@ -169,7 +169,8 @@ public class RecipeOperation {
 		return state;
 
 	}
-
+//author:Huijun Sun
+//Return: when recipe is active returns true otherwise return false.
 	public static boolean checkRecipeState(int recipeId) {
 		boolean result = false;
 		Connection connection = null;

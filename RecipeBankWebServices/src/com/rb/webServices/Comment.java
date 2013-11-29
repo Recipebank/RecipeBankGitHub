@@ -6,12 +6,14 @@ import java.sql.ResultSet;
 
 import com.rb.util.ConnectDB;
 import com.rb.util.ProduceJSON;
+import com.rb.util.RecipeOperation;
 
 public class Comment {
 
 	public String getCommentbyRecipe(int recipeId) {
 
 		String result = "";
+
 		Connection conn = null;
 		try {
 			conn = ConnectDB.getConnection();
@@ -55,24 +57,26 @@ public class Comment {
 
 		int result = 0;
 		Connection conn = null;
-		try {
-			conn = ConnectDB.getConnection();
-			PreparedStatement st = null;
-			String sql = "insert into recipebank.comment (DetailInfo,RecipeId,AccountId) values(?,?,?)";
-			st = conn.prepareStatement(sql);
-			st.setString(1, info);
-			st.setInt(2, recipeId);
-			st.setInt(3, accountId);
-			int re = st.executeUpdate();
-			if (re==1) {
-				result = 1;
-			} else {
-				result = 0;
+		if (RecipeOperation.checkRecipeState(recipeId)) {
+			try {
+				conn = ConnectDB.getConnection();
+				PreparedStatement st = null;
+				String sql = "insert into recipebank.comment (DetailInfo,RecipeId,AccountId) values(?,?,?)";
+				st = conn.prepareStatement(sql);
+				st.setString(1, info);
+				st.setInt(2, recipeId);
+				st.setInt(3, accountId);
+				int re = st.executeUpdate();
+				if (re == 1) {
+					result = 1;
+				} else {
+					result = 0;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				ConnectDB.closeConnection(conn);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			ConnectDB.closeConnection(conn);
 		}
 
 		return result;
@@ -89,7 +93,7 @@ public class Comment {
 			st = conn.prepareStatement(sql);
 			st.setInt(1, commentId);
 			int re = st.executeUpdate();
-			if (re==1) {
+			if (re == 1) {
 				result = 1;
 			} else {
 				result = 0;
