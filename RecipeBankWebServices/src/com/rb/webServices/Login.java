@@ -124,4 +124,16 @@ public class Login {
 		}
 		return result;
 	}
+	//author:Huijun Sun
+	//parameter:JsonObject like ["AccountId":AccountId], AccountId means the accountId for the member 
+	//which wants to delete their account.
+	public String deleteAccount(String jsonObject)
+	{
+		String result="Failed!";
+		int accountId=Integer.parseInt(ProduceJSON.parseJsonObjectToHashMap(jsonObject).get("AccountId").toString());
+		if (AccountOperation.deleteAccount(accountId)==1) {
+			result="Success";
+		}
+		return result;
+	}
 }

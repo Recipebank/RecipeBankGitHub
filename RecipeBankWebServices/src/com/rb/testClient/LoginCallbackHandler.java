@@ -93,6 +93,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for deleteAccount method
+            * override this method for handling normal response from deleteAccount operation
+            */
+           public void receiveResultdeleteAccount(
+                    com.rb.testClient.LoginStub.DeleteAccountResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from deleteAccount operation
+           */
+            public void receiveErrordeleteAccount(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for createNewAccount method
             * override this method for handling normal response from createNewAccount operation
             */
