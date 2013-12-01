@@ -1,4 +1,5 @@
 package com.rb.webServices;
+
 //owner: Huijun Sun
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -77,6 +78,15 @@ public class ShoppingList {
 		}
 
 		return resultString;
+	}
+
+	public String changeShoppingListState(int shoppingIngredientsId, int state) {
+		boolean result=false;
+		if(ShoppingListOperation.changeShoppingListState(shoppingIngredientsId,state))
+		{
+			result=true;
+		}
+		return result+"";
 	}
 
 }
