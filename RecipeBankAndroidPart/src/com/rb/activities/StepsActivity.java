@@ -13,6 +13,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import com.rb.util.Ipconfig;
+
 
 
 import android.os.AsyncTask;
@@ -27,8 +29,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class StepsActivity extends Activity {
+	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/getRecipeDetails";
 	private final String METHOD_NAME = "getRecipeDetails";
 	private String TAG = "Reci";
