@@ -14,8 +14,6 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import com.rb.util.Ipconfig;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,6 +22,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,6 +32,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.rb.util.Ipconfig;
 
 public class HomPageActivity extends Activity {
 	private final String ipaddress=Ipconfig.ipaddress;
@@ -69,10 +70,13 @@ public class HomPageActivity extends Activity {
 	EditText et=null;
 	
 	LinearLayout ll=null;
+	
+	public static int flag=0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_se);
 		asyncCall task = new asyncCall();
 		task.execute();
@@ -80,7 +84,7 @@ public class HomPageActivity extends Activity {
 		spinnerCat=(Spinner) findViewById(R.id.spinner1);
 		asyncCallCat task1 = new asyncCallCat();
 		task1.execute();
- 		
+ 		 
  		tv1=(TextView) findViewById(R.id.textView1);
  		tv2=(TextView) findViewById(R.id.textView2);
  		tv3=(TextView) findViewById(R.id.textView3);
@@ -94,16 +98,64 @@ public class HomPageActivity extends Activity {
  		search=(Button) findViewById(R.id.button1);
  		
  		et=(EditText) findViewById(R.id.editText1);
- 		
+		
  	
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		if(flag==0)
+		{
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+		}
+		else
+		{
+			getMenuInflater().inflate(R.menu.hom_page, menu);
+			return true;
+		
+		}
 	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {    
+    	switch (item.getItemId()) 
+    	{        
+    		case R.id.login:    
+    			
+    			Intent intent = new Intent(this, LoginActivity.class);
+    			startActivity(intent);
+    			
+	    		break;        
+    		
+    		case R.id.register:
+    			
+    			Intent intent2 = new Intent(this, RegisterActivity.class);
+    			startActivity(intent2);
+    			
+    			break;   
+    			
+    		case R.id.logout:
+    			flag=0;
+    			Intent intent3 = new Intent(this, HomPageActivity.class);
+    			startActivity(intent3);
+    			
+    			break;  
+    		case R.id.add:
+		
+    			Intent intent4 = new Intent(this, CreateRecipeActivity.class);
+    			startActivity(intent4);
+		
+    			break;  
+    		
+    	
+			
+    			
+    	}    
+    	return true;
+    }
 	
 	public void Search(View view)
 	{

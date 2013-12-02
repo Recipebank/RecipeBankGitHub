@@ -73,6 +73,7 @@ public class LoginActivity extends Activity {
 			if(LoginActivity.this.result)
 			{
 			Intent intent=new Intent(LoginActivity.this,HomPageActivity.class);
+			HomPageActivity.flag=1;
 			startActivity(intent);
 			}
 			else

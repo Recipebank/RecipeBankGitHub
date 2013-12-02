@@ -30,6 +30,7 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout1=0x7f080000;
         public static final int action_settings=0x7f080017;
+        public static final int add=0x7f080019;
         public static final int button1=0x7f080008;
         public static final int button2=0x7f080007;
         public static final int button3=0x7f080009;
@@ -44,6 +45,10 @@ public final class R {
         public static final int inscroll=0x7f08000a;
         public static final int inscrollview=0x7f080010;
         public static final int listView1=0x7f080015;
+        public static final int login=0x7f08001b;
+        public static final int logout=0x7f080018;
+        public static final int register=0x7f08001c;
+        public static final int shopping=0x7f08001a;
         public static final int spinner1=0x7f08000f;
         public static final int tableRow1=0x7f08000b;
         public static final int tableRow2=0x7f08000d;
@@ -61,11 +66,12 @@ public final class R {
         public static final int activity_hom_page=0x7f030004;
         public static final int activity_login=0x7f030005;
         public static final int activity_main=0x7f030006;
-        public static final int activity_se=0x7f030007;
-        public static final int activity_search_result=0x7f030008;
-        public static final int activity_steps=0x7f030009;
-        public static final int profile_page=0x7f03000a;
-        public static final int registration=0x7f03000b;
+        public static final int activity_register=0x7f030007;
+        public static final int activity_se=0x7f030008;
+        public static final int activity_search_result=0x7f030009;
+        public static final int activity_steps=0x7f03000a;
+        public static final int profile_page=0x7f03000b;
+        public static final int registration=0x7f03000c;
     }
     public static final class menu {
         public static final int add_steps=0x7f070000;
@@ -75,8 +81,9 @@ public final class R {
         public static final int hom_page=0x7f070004;
         public static final int login=0x7f070005;
         public static final int main=0x7f070006;
-        public static final int search_result=0x7f070007;
-        public static final int steps=0x7f070008;
+        public static final int register=0x7f070007;
+        public static final int search_result=0x7f070008;
+        public static final int steps=0x7f070009;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -88,6 +95,7 @@ public final class R {
         public static final int title_activity_detailed_view=0x7f050005;
         public static final int title_activity_hom_page=0x7f050003;
         public static final int title_activity_login=0x7f050007;
+        public static final int title_activity_register=0x7f05000c;
         public static final int title_activity_se=0x7f050004;
         public static final int title_activity_search_result=0x7f050006;
         public static final int title_activity_steps=0x7f050008;

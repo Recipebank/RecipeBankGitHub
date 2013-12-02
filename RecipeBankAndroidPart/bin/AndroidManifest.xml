@@ -20,7 +20,7 @@
         <activity
             android:name="com.rb.activities.HomPageActivity"
             android:label="@string/title_activity_hom_page" >
-           <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -49,7 +49,6 @@
         <activity
             android:name="com.rb.activities.CreateRecipeActivity"
             android:label="@string/title_activity_create_recipe" >
-             
         </activity>
         <activity
             android:name="com.rb.activities.CreateIngreActivity"
@@ -58,6 +57,10 @@
         <activity
             android:name="com.rb.activities.AddStepsActivity"
             android:label="@string/title_activity_add_steps" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.RegisterActivity"
+            android:label="@string/title_activity_register" >
         </activity>
     </application>
 
