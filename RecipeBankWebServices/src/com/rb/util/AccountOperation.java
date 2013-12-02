@@ -40,5 +40,38 @@ public class AccountOperation {
 
 		return result;
 	}
-
+	//author:Huijun Sun
+	//paramater: account id which member wants to delete this account in the App
+	public static int deleteAccount(int accountId)
+	{
+		int result=0;
+		Connection conn = null;
+	    PreparedStatement statement = null;
+	    ResultSet rs = null;
+	    String sql = "update recipebank.account set AccountState=1 where accountid=?;";
+	    //System.out.println(sql);
+	    try {
+			conn=ConnectDB.getConnection();
+			statement=conn.prepareStatement(sql);
+			statement.setInt(1, accountId);
+			if(statement.executeUpdate()>0)
+			{
+				
+				if(RecipeOperation.deleteRecipeByAccountId(accountId))
+				{
+					result=1;
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    finally
+	    {
+	    	ConnectDB.closeConnection(conn);
+	    }
+		return result;
+	}
 }

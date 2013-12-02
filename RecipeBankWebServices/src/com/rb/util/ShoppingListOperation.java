@@ -105,4 +105,29 @@ public class ShoppingListOperation {
 		return result;
 		
 	}
+	public static boolean changeShoppingListState(int id, int state)
+	{
+		boolean result=false;
+		Connection connection = null;
+		String sql="update recipebank.shoppinglist set ShoppingIngredientState=? where shoppingIngredientsId=?;";
+		try {
+			connection=ConnectDB.getConnection();
+			PreparedStatement st=connection.prepareStatement(sql);
+			st.setInt(1, state);
+			st.setInt(2, id);
+			if(st.executeUpdate()>0)
+			{
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			ConnectDB.closeConnection(connection); 
+		}
+		return result;
+		
+	}
 }

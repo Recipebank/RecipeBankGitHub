@@ -21,7 +21,7 @@ public class LoginClient {
 		LoginAndGetUserInfoResponse response = stub.loginAndGetUserInfo(request);
 		System.out.println("Response : " + response.get_return());*/
 		
-		// Creating the request
+/*		// Creating the request
 		com.rb.testClient.LoginStub.CreateNewAccount request = new com.rb.testClient.LoginStub.CreateNewAccount();
 		JSONObject jsonObject=new JSONObject();
 		jsonObject.put("NickName", "wwww");
@@ -29,7 +29,14 @@ public class LoginClient {
 		jsonObject.put("Password", "232");
 		request.setJsonObject(jsonObject.toString());
 		CreateNewAccountResponse response = stub.createNewAccount(request);
-		System.out.println("Response : " + response.get_return());
+		System.out.println("Response : " + response.get_return());*/
+		
+		//test delete a account
+		com.rb.testClient.LoginStub.DeleteAccount request = new com.rb.testClient.LoginStub.DeleteAccount();
+		JSONObject jsonObject=new JSONObject();
+		jsonObject.put("AccountId", 6);
+		request.setJsonObject(jsonObject.toString());
+		com.rb.testClient.LoginStub.DeleteAccountResponse response = stub.deleteAccount(request);
 		
 	}
 

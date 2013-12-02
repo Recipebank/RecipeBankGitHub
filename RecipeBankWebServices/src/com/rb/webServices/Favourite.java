@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import com.rb.util.ConnectDB;
 import com.rb.util.ProduceJSON;
+import com.rb.util.RecipeOperation;
 
 public class Favourite {
 
@@ -17,7 +18,10 @@ public class Favourite {
 			conn = ConnectDB.getConnection();
 			PreparedStatement st = null;
 			ResultSet rs = null;
-			String sql = "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where f.AccountId = "
+			// String sql =
+			// "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where f.AccountId = "
+			// + accountId;
+			String sql = "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where r.recipeState=0 and f.AccountId = "
 					+ accountId;
 			st = conn.prepareStatement(sql);
 			rs = st.executeQuery();
@@ -29,25 +33,29 @@ public class Favourite {
 		}
 		return result;
 	}
-
+//
 	public String getFavouriteListByRecipe(int recipeId) {
 
 		String result = "";
 		Connection conn = null;
-		try {
-			conn = ConnectDB.getConnection();
-			PreparedStatement st = null;
-			ResultSet rs = null;
-			String sql = "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where f.RecipeId ="
-					+ recipeId;
-			st = conn.prepareStatement(sql);
-			rs = st.executeQuery();
-			result = ProduceJSON.resultSetToJsonArray(rs);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			ConnectDB.closeConnection(conn);
+		if (RecipeOperation.checkRecipeState(recipeId)) {
+
+			try {
+				conn = ConnectDB.getConnection();
+				PreparedStatement st = null;
+				ResultSet rs = null;
+				String sql = "SELECT f.RecipeId, r.RecipeTitle, r.Rate, r.RecipeState,r.Photo FROM recipebank.favourite f inner join recipebank.recipe r on f.RecipeId = r.RecipeId where f.RecipeId ="
+						+ recipeId;
+				st = conn.prepareStatement(sql);
+				rs = st.executeQuery();
+				result = ProduceJSON.resultSetToJsonArray(rs);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				ConnectDB.closeConnection(conn);
+			}
 		}
+		
 		return result;
 	}
 
@@ -81,7 +89,8 @@ public class Favourite {
 
 		int result = 0;
 		Connection conn = null;
-		if (checkFavouriteState(accountId, recipeId) == 1) {
+		
+		if (checkFavouriteState(accountId, recipeId) == 1&&!RecipeOperation.checkRecipeState(recipeId)) {
 			result = 3;
 			return result;
 		}
@@ -111,7 +120,7 @@ public class Favourite {
 
 		int result = 0;
 		Connection conn = null;
-		if (checkFavouriteState(accountId, recipeId) == 0) {
+		if (checkFavouriteState(accountId, recipeId) == 0&&!RecipeOperation.checkRecipeState(recipeId)) {
 			result = 3;
 			return result;
 		}
