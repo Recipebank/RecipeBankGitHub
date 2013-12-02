@@ -39,7 +39,7 @@ public class ShoppingListClient {
 		// test view ingredients in the shopping list -----start
 		// Creating the request
 		com.rb.testClient.ShoppingListStub.ViewShoppingList viewRequest = new com.rb.testClient.ShoppingListStub.ViewShoppingList();
-
+viewRequest.setAccountId(1);
 		// Invoking the service
 		com.rb.testClient.ShoppingListStub.ViewShoppingListResponse viewResponse = stub
 				.viewShoppingList(viewRequest);
