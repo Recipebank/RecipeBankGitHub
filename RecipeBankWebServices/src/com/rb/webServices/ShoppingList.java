@@ -1,5 +1,6 @@
 package com.rb.webServices;
 
+//owner: Huijun Sun
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,13 +16,15 @@ import com.rb.util.ProduceJSON;
 import com.rb.util.ShoppingListOperation;
 
 public class ShoppingList {
-	public String addIngredientIntoShoppingList(String ingredientObject) {
+	public String addIngredientIntoShoppingList(String ingredientObject,
+			String accountId) {
 		String resultString = null;
 		HashMap<String, String> ingredientMap = ProduceJSON
 				.parseJsonObjectToHashMap(ingredientObject);
 		if (ShoppingListOperation.addIngredientIntoShoppingList(
 				Integer.parseInt(ingredientMap.get("IngredientId")),
-				Integer.parseInt(ingredientMap.get("RecipeId"))) > 0) {
+				Integer.parseInt(ingredientMap.get("RecipeId")),
+				Integer.parseInt(accountId)) > 0) {
 			resultString = "Success!";
 		} else {
 			resultString = "Failed!";
@@ -52,7 +55,7 @@ public class ShoppingList {
 		return resultString;
 	}
 
-	public String viewShoppingList() {
+	public String viewShoppingList(int accountId) {
 		String resultString = "";
 		ResultSet rs = null;
 		Connection connection = null;
@@ -61,11 +64,12 @@ public class ShoppingList {
 				+ "ShoppingIngredientState,IngredientMeasure,IngredientQuanlity from recipebank.shoppinglist s "
 				+ "join recipebank.recipe r on s.RecipeId = r.RecipeId "
 				+ "join recipebank.ingredient i on s.IngredientId=i.IngredientId "
+				+ "where s.accountId=? "
 				+ "order by s.RecipeId,shoppingIngredientsId asc;";
 		try {
 			connection = ConnectDB.getConnection();
 			st = connection.prepareStatement(sqlString);
-
+			st.setInt(1, accountId);
 			rs = st.executeQuery();
 			resultString = ProduceJSON.resultSetToJsonArray(rs);
 
@@ -77,6 +81,15 @@ public class ShoppingList {
 		}
 
 		return resultString;
+	}
+
+	public String changeShoppingListState(int shoppingIngredientsId, int state) {
+		boolean result = false;
+		if (ShoppingListOperation.changeShoppingListState(
+				shoppingIngredientsId, state)) {
+			result = true;
+		}
+		return result + "";
 	}
 
 }

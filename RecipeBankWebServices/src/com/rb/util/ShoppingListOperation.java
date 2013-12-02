@@ -11,14 +11,14 @@ import java.sql.Statement;
 
 public class ShoppingListOperation {
 
-	public static int addIngredientIntoShoppingList(int ingredientId,int recipeId)
+	public static int addIngredientIntoShoppingList(int ingredientId,int recipeId,int accountId)
 	{
 		int result=0;
 		Connection connection = null;
 		PreparedStatement st = null;
 		ResultSet rs=null;
 		String sqlSearch="select * from recipebank.recipeingredientlist where IngredientId=? and recipeid=?;";
-		String sqlInsert="insert into recipebank.shoppinglist (RecipeId,IngredientId,ingredientMeasure,IngredientQuanlity)values(?,?,?,?);";
+		String sqlInsert="insert into recipebank.shoppinglist (RecipeId,IngredientId,ingredientMeasure,IngredientQuanlity,AccountId)values(?,?,?,?,?);";
 		
 		try {
 			connection=ConnectDB.getConnection();
@@ -33,6 +33,7 @@ public class ShoppingListOperation {
 				st.setInt(2,rs.getInt("IngredientId"));
 				st.setString(3,rs.getString("IngredientMeasure"));
 				st.setDouble(4, rs.getDouble("IngredientQuanlity"));
+				st.setInt(4, accountId);
 				if(st.executeUpdate()>0)
 				{
 					result=1;
@@ -94,6 +95,31 @@ public class ShoppingListOperation {
 			System.out.println(sqlString);
 			result=statement.execute(sqlString);
 			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			ConnectDB.closeConnection(connection); 
+		}
+		return result;
+		
+	}
+	public static boolean changeShoppingListState(int id, int state)
+	{
+		boolean result=false;
+		Connection connection = null;
+		String sql="update recipebank.shoppinglist set ShoppingIngredientState=? where shoppingIngredientsId=?;";
+		try {
+			connection=ConnectDB.getConnection();
+			PreparedStatement st=connection.prepareStatement(sql);
+			st.setInt(1, state);
+			st.setInt(2, id);
+			if(st.executeUpdate()>0)
+			{
+				return true;
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
