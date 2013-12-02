@@ -11,14 +11,14 @@ import java.sql.Statement;
 
 public class ShoppingListOperation {
 
-	public static int addIngredientIntoShoppingList(int ingredientId,int recipeId)
+	public static int addIngredientIntoShoppingList(int ingredientId,int recipeId,int accountId)
 	{
 		int result=0;
 		Connection connection = null;
 		PreparedStatement st = null;
 		ResultSet rs=null;
 		String sqlSearch="select * from recipebank.recipeingredientlist where IngredientId=? and recipeid=?;";
-		String sqlInsert="insert into recipebank.shoppinglist (RecipeId,IngredientId,ingredientMeasure,IngredientQuanlity)values(?,?,?,?);";
+		String sqlInsert="insert into recipebank.shoppinglist (RecipeId,IngredientId,ingredientMeasure,IngredientQuanlity,AccountId)values(?,?,?,?,?);";
 		
 		try {
 			connection=ConnectDB.getConnection();
@@ -33,6 +33,7 @@ public class ShoppingListOperation {
 				st.setInt(2,rs.getInt("IngredientId"));
 				st.setString(3,rs.getString("IngredientMeasure"));
 				st.setDouble(4, rs.getDouble("IngredientQuanlity"));
+				st.setInt(4, accountId);
 				if(st.executeUpdate()>0)
 				{
 					result=1;
