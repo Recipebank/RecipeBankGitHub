@@ -20,11 +20,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.rb.activities.R;
+import com.rb.util.Ipconfig;
 
 public class LoginActivity extends Activity {
-
+	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.49.52:8088/RecipeBankWebServices1/services/Login?wsdl";
+	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Login?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/loginGetBoolenTypeStatus";
 	private final String METHOD_NAME = "loginGetBoolenTypeStatus";
 
@@ -72,6 +73,7 @@ public class LoginActivity extends Activity {
 			if(LoginActivity.this.result)
 			{
 			Intent intent=new Intent(LoginActivity.this,HomPageActivity.class);
+			HomPageActivity.flag=1;
 			startActivity(intent);
 			}
 			else

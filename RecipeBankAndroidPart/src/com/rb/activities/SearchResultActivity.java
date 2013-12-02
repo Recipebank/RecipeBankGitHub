@@ -22,11 +22,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.rb.activities.R;
+import com.rb.util.Ipconfig;
 
 public class SearchResultActivity extends Activity {
-	
+	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/searchRecipeByKeyWord";
 	private final String METHOD_NAME = "searchRecipeByKeyWord";
 	private String TAG = "Reci";

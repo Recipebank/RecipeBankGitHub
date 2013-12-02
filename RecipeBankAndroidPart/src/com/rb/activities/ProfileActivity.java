@@ -24,7 +24,7 @@ import com.rb.activities.R;
 public class ProfileActivity extends Activity {
 
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.49.52:8088/RecipeBankWebServices1/services/Account?wsdl";
+	private final String URL = "http://10.24.49.52:8088/RecipeBankWebServices/services/Account?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/Account";
 	private final String METHOD_NAME = "Account";
 

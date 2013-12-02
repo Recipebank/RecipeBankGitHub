@@ -22,6 +22,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,15 +32,17 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import com.rb.activities.R;
+
+import com.rb.util.Ipconfig;
 
 public class HomPageActivity extends Activity {
+	private final String ipaddress=Ipconfig.ipaddress;
 	private final String NAMESPACE = "http://webServices.rb.com";
-	private final String URL = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Recipe?wsdl";
+	private final String URL = "http://"+ipaddress+"/RecipeBankWebServices/services/Recipe?wsdl";
 	private final String SOAP_ACTION = "http://webServices.rb.com/getRecipesAsYouWant";
 	private final String METHOD_NAME = "getRecipesAsYouWant";
 	
-	private final String URLCat = "http://10.24.0.191:8088/RecipeBankWebServices1/services/Category?wsdl";
+	private final String URLCat = "http://"+ipaddress+"/RecipeBankWebServices/services/Category?wsdl";
 	private final String SOAP_ACTIONCat = "http://webServices.rb.com/getAllCategories";
 	private final String METHOD_NAMECat = "getAllCategories";
 	private String TAG = "Reci";
@@ -67,18 +70,21 @@ public class HomPageActivity extends Activity {
 	EditText et=null;
 	
 	LinearLayout ll=null;
+	
+	public static int flag=0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_se);
 		asyncCall task = new asyncCall();
 		task.execute();
-		ll=(LinearLayout) findViewById(R.id.inscroll);
+	
 		spinnerCat=(Spinner) findViewById(R.id.spinner1);
 		asyncCallCat task1 = new asyncCallCat();
 		task1.execute();
- 		
+ 		 
  		tv1=(TextView) findViewById(R.id.textView1);
  		tv2=(TextView) findViewById(R.id.textView2);
  		tv3=(TextView) findViewById(R.id.textView3);
@@ -92,24 +98,104 @@ public class HomPageActivity extends Activity {
  		search=(Button) findViewById(R.id.button1);
  		
  		et=(EditText) findViewById(R.id.editText1);
- 		
- 		search.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
-				intent.putExtra("searchKey",et.getText().toString());
-				startActivity(intent);
-				
-			}
-		});
+		
+ 	
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		if(flag==0)
+		{
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+		}
+		else
+		{
+			getMenuInflater().inflate(R.menu.hom_page, menu);
+			return true;
+		
+		}
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {    
+    	switch (item.getItemId()) 
+    	{        
+    		case R.id.login:    
+    			
+    			Intent intent = new Intent(this, LoginActivity.class);
+    			startActivity(intent);
+    			
+	    		break;        
+    		
+    		case R.id.register:
+    			
+    			Intent intent2 = new Intent(this, RegisterActivity.class);
+    			startActivity(intent2);
+    			
+    			break;   
+    			
+    		case R.id.logout:
+    			flag=0;
+    			Intent intent3 = new Intent(this, HomPageActivity.class);
+    			startActivity(intent3);
+    			
+    			break;  
+    		case R.id.add:
+		
+    			Intent intent4 = new Intent(this, CreateRecipeActivity.class);
+    			startActivity(intent4);
+		
+    			break;  
+    		
+    	
+			
+    			
+    	}    
+    	return true;
+    }
+	
+	public void Search(View view)
+	{
+		
+		Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+		intent.putExtra("searchKey",et.getText().toString());
+		startActivity(intent);
+		
+	}
+	
+	public void DetailedView(View view)
+	{
+		if(view.equals(im1))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv1.getText().toString());
+			startActivity(intent);
+		}
+		else if(view.equals(im2))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv2.getText().toString());
+			startActivity(intent);
+		}
+		else if(view.equals(im3))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv3.getText().toString());
+			startActivity(intent);
+		}
+		else if(view.equals(im4))
+		{
+
+			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
+			intent.putExtra("searchKey",tv4.getText().toString());
+			startActivity(intent);
+		}
 	}
 	
 	/***************/
