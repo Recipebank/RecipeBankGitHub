@@ -2678,6 +2678,48 @@
                                }
                             
 
+                        /**
+                        * field for AccountId
+                        */
+
+                        
+                                    protected java.lang.String localAccountId ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAccountIdTracker = false ;
+
+                           public boolean isAccountIdSpecified(){
+                               return localAccountIdTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getAccountId(){
+                               return localAccountId;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param AccountId
+                               */
+                               public void setAccountId(java.lang.String param){
+                            localAccountIdTracker = true;
+                                   
+                                            this.localAccountId=param;
+                                    
+
+                               }
+                            
+
      
      
         /**
@@ -2750,6 +2792,24 @@
 
                                         
                                                    xmlWriter.writeCharacters(localIngredientObject);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localAccountIdTracker){
+                                    namespace = "http://webServices.rb.com";
+                                    writeStartElement(null, namespace, "accountId", xmlWriter);
+                             
+
+                                          if (localAccountId==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localAccountId);
                                             
                                           }
                                     
@@ -2945,6 +3005,12 @@
                                  
                                          elementList.add(localIngredientObject==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIngredientObject));
+                                    } if (localAccountIdTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                                      "accountId"));
+                                 
+                                         elementList.add(localAccountId==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountId));
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -3033,6 +3099,34 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setIngredientObject(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://webServices.rb.com","accountId").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAccountId(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {
@@ -3530,6 +3624,51 @@
 
             
 
+                        /**
+                        * field for AccountId
+                        */
+
+                        
+                                    protected int localAccountId ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAccountIdTracker = false ;
+
+                           public boolean isAccountIdSpecified(){
+                               return localAccountIdTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getAccountId(){
+                               return localAccountId;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param AccountId
+                               */
+                               public void setAccountId(int param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       localAccountIdTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
+                                   
+                                            this.localAccountId=param;
+                                    
+
+                               }
+                            
+
      
      
         /**
@@ -3588,7 +3727,20 @@
 
                
                    }
-               
+                if (localAccountIdTracker){
+                                    namespace = "http://webServices.rb.com";
+                                    writeStartElement(null, namespace, "accountId", xmlWriter);
+                             
+                                               if (localAccountId==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("accountId cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountId));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -3773,7 +3925,13 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                
+                 if (localAccountIdTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                                      "accountId"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountId));
+                            }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -3848,7 +4006,33 @@
                 
                     
                     reader.next();
-                  
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://webServices.rb.com","accountId").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"accountId" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAccountId(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                               object.setAccountId(java.lang.Integer.MIN_VALUE);
+                                           
+                                    }
+                                  
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             

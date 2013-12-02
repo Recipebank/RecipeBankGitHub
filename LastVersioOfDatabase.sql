@@ -340,14 +340,17 @@ DROP TABLE IF EXISTS `shoppinglist`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shoppinglist` (
   `ShoppingIngredientsId` int(11) NOT NULL AUTO_INCREMENT,
-  `RecipeId` int(11) NOT NULL,
   `IngredientId` int(11) NOT NULL,
+  `RecipeId` int(11) NOT NULL,
   `ShoppingIngredientState` int(11) NOT NULL DEFAULT '0' COMMENT '0 means need to buy\n1 means have bought',
   `ingredientMeasure` varchar(45) DEFAULT NULL,
   `ingredientQuanlity` decimal(5,2) DEFAULT '0.00',
+  `AccountId` int(11) NOT NULL,
   PRIMARY KEY (`ShoppingIngredientsId`),
   KEY `fk_SI_IngredientId_idx` (`IngredientId`),
   KEY `fk_SI_RecipeId_idx` (`RecipeId`),
+  KEY `fk_SI_AccountId_idx` (`AccountId`),
+  CONSTRAINT `fk_SI_AccountId` FOREIGN KEY (`AccountId`) REFERENCES `account` (`AccountId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_SI_IngredientId` FOREIGN KEY (`IngredientId`) REFERENCES `ingredient` (`IngredientId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_SI_RecipeId` FOREIGN KEY (`RecipeId`) REFERENCES `recipe` (`RecipeId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
@@ -359,7 +362,7 @@ CREATE TABLE `shoppinglist` (
 
 LOCK TABLES `shoppinglist` WRITE;
 /*!40000 ALTER TABLE `shoppinglist` DISABLE KEYS */;
-INSERT INTO `shoppinglist` VALUES (2,12,10,0,'cup',0.50),(3,4,11,0,'teaspoon',2.00),(5,12,13,0,'teaspoon',1.00),(6,12,13,0,'teaspoon',1.00),(7,12,13,0,'teaspoon',1.00);
+INSERT INTO `shoppinglist` VALUES (2,10,12,0,'cup',0.50,1),(3,11,4,0,'teaspoon',2.00,1),(5,13,12,0,'teaspoon',1.00,1),(6,13,12,0,'teaspoon',1.00,1),(7,13,12,0,'teaspoon',1.00,1);
 /*!40000 ALTER TABLE `shoppinglist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -372,4 +375,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-01  0:37:30
+-- Dump completed on 2013-12-02  0:38:43
