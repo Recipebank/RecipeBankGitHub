@@ -31,6 +31,12 @@ public class ShoppingList {
 		}
 		return resultString;
 	}
+	public String addIngredientsIntoShoppingListByRecipeId(int recipeId,int accountId)
+	{
+		
+		return ShoppingListOperation.checkShoppingList(recipeId, accountId);
+		
+	}
 
 	public String deleteIngredientFromShoppingList(String ingredientsArray) {
 		String resultString = null;
@@ -72,19 +78,19 @@ public class ShoppingList {
 			st.setInt(1, accountId);
 			rs = st.executeQuery();
 			resultString = ProduceJSON.resultSetToJsonArray(rs);
-
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			ConnectDB.closeConnection(connection);
 		}
-
 		return resultString;
 	}
 
 	public String changeShoppingListState(int shoppingIngredientsId, int state) {
 		boolean result = false;
+		System.out.println("shoppingIngredientsId" + shoppingIngredientsId);
+		System.out.println("state" + state);
 		if (ShoppingListOperation.changeShoppingListState(
 				shoppingIngredientsId, state)) {
 			result = true;

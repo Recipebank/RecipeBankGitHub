@@ -33,7 +33,7 @@ public class ShoppingListOperation {
 				st.setInt(2,rs.getInt("IngredientId"));
 				st.setString(3,rs.getString("IngredientMeasure"));
 				st.setDouble(4, rs.getDouble("IngredientQuanlity"));
-				st.setInt(4, accountId);
+				st.setInt(5, accountId);
 				if(st.executeUpdate()>0)
 				{
 					result=1;
@@ -50,6 +50,71 @@ public class ShoppingListOperation {
 		}
 		
 		
+		return result;
+	}
+	public static String checkShoppingList(int recipeId,int accountId)
+	{
+		String result="Failed!";
+		Connection connection = null;
+		PreparedStatement st = null;
+		ResultSet rs=null;
+		try {
+			String sqlSearch="select * from recipebank.shoppinglist where recipeId=?;";
+			connection=ConnectDB.getConnection();
+			st=connection.prepareStatement(sqlSearch);
+			st.setInt(1, recipeId);
+			
+			rs=st.executeQuery();
+			if(rs.next())
+			{
+				result="This recipe's ingredients already in the shopping list.";
+			}
+			else {
+				if (addIngredientsIntoShoppingListByRecipeId(recipeId,accountId)) {
+					result="Success!";
+				}
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			ConnectDB.closeConnection(connection);
+		}
+		return result;
+	}
+	public static boolean addIngredientsIntoShoppingListByRecipeId(int recipeId,int accountId)
+	{
+		boolean result=true;
+		Connection connection = null;
+		PreparedStatement st = null;
+		ResultSet rs=null;
+		try {
+			String sqlSearch="select * from recipebank.recipeingredientlist where recipeId=?;";
+			connection=ConnectDB.getConnection();
+			st=connection.prepareStatement(sqlSearch);
+			st.setInt(1, recipeId);
+			
+			rs=st.executeQuery();
+			while (rs.next()) {
+				
+				if(addIngredientIntoShoppingList(rs.getInt("IngredientId"), recipeId, accountId)!=1)
+				{
+					result=false;
+				}
+				
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			ConnectDB.closeConnection(connection);
+		}
 		return result;
 	}
 	public static int deleteOneIngredientInShoppingList(int shoppingIngredientId)
