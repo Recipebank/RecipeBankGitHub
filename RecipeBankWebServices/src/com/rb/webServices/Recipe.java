@@ -207,7 +207,7 @@ public class Recipe {
 
 	// Create by Dongchao Feng
 	public String searchRecipeByKeyWord(String keyword) {
-		String sql = "select * from recipe inner join recipecategory on recipe.RecipeId = recipecategory.RecipeId inner join category on recipecategory.CategoryId = category.CategoryId where  recipe.RecipeState=0 and recipe.RecipeTitle LIKE '%"
+		String sql = "select * from recipe left join recipecategory on recipe.RecipeId = recipecategory.RecipeId left join category on recipecategory.CategoryId = category.CategoryId where  recipe.RecipeState=0 and recipe.RecipeTitle LIKE '%"
 				+ keyword
 				+ "%'or recipe.Description LIKE '%"
 				+ keyword
