@@ -44,7 +44,7 @@
         //creating the operations
         org.apache.axis2.description.AxisOperation __operation;
 
-        _operations = new org.apache.axis2.description.AxisOperation[17];
+        _operations = new org.apache.axis2.description.AxisOperation[18];
         
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
@@ -85,7 +85,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipeIngredient"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByUserName"));
 	    _service.addOperation(__operation);
 	    
 
@@ -97,7 +97,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "createRecipe"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipeIngredient"));
 	    _service.addOperation(__operation);
 	    
 
@@ -109,7 +109,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByState"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "createRecipe"));
 	    _service.addOperation(__operation);
 	    
 
@@ -121,7 +121,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipeByAccountWithAmount"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByState"));
 	    _service.addOperation(__operation);
 	    
 
@@ -133,7 +133,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipesAsYouWant"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipeByAccountWithAmount"));
 	    _service.addOperation(__operation);
 	    
 
@@ -145,7 +145,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "insertRecipeStep"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipesAsYouWant"));
 	    _service.addOperation(__operation);
 	    
 
@@ -157,7 +157,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByRate"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "insertRecipeStep"));
 	    _service.addOperation(__operation);
 	    
 
@@ -169,7 +169,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipeDetails"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByRate"));
 	    _service.addOperation(__operation);
 	    
 
@@ -181,7 +181,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "rateRecipe"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getRecipeDetails"));
 	    _service.addOperation(__operation);
 	    
 
@@ -193,7 +193,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getAllRecipes"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "rateRecipe"));
 	    _service.addOperation(__operation);
 	    
 
@@ -205,7 +205,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByKeyWord"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "getAllRecipes"));
 	    _service.addOperation(__operation);
 	    
 
@@ -217,7 +217,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByCategory"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByKeyWord"));
 	    _service.addOperation(__operation);
 	    
 
@@ -229,7 +229,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "insertIngredient"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "searchRecipeByCategory"));
 	    _service.addOperation(__operation);
 	    
 
@@ -241,13 +241,25 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "deleteRecipe"));
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "insertIngredient"));
 	    _service.addOperation(__operation);
 	    
 
 	    
 	    
             _operations[16]=__operation;
+            
+        
+                   __operation = new org.apache.axis2.description.OutInAxisOperation();
+                
+
+            __operation.setName(new javax.xml.namespace.QName("http://webServices.rb.com", "deleteRecipe"));
+	    _service.addOperation(__operation);
+	    
+
+	    
+	    
+            _operations[17]=__operation;
             
         
         }
@@ -1188,16 +1200,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see com.rb.testClient.Recipe#getRecipeIngredient
-                     * @param getRecipeIngredient6
+                     * @see com.rb.testClient.Recipe#searchRecipeByUserName
+                     * @param searchRecipeByUserName6
                     
                      */
 
                     
 
-                            public  com.rb.testClient.RecipeStub.GetRecipeIngredientResponse getRecipeIngredient(
+                            public  com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse searchRecipeByUserName(
 
-                            com.rb.testClient.RecipeStub.GetRecipeIngredient getRecipeIngredient6)
+                            com.rb.testClient.RecipeStub.SearchRecipeByUserName searchRecipeByUserName6)
                         
 
                     throws java.rmi.RemoteException
@@ -1206,6 +1218,295 @@
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
                org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
+              _operationClient.getOptions().setAction("\"\"");
+              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_LOCATION,"searchRecipeByUserName");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.ENABLE_REST,true);
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.HTTP_METHOD,"POST");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.CONTENT_TYPE,"application/xml");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.MESSAGE_TYPE,"application/xml");
+              
+
+              // create a message context
+              _messageContext = new org.apache.axis2.context.MessageContext();
+
+              
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env = null;
+                    
+                                                    
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    searchRecipeByUserName6,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                    "searchRecipeByUserName")), new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                    "searchRecipeByUserName"));
+                                                
+        //adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // set the message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message contxt to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        //execute the operation client
+        _operationClient.execute(true);
+
+         
+               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
+                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+                
+                
+                                java.lang.Object object = fromOM(
+                                             _returnEnv.getBody().getFirstElement() ,
+                                             com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse.class,
+                                              getEnvelopeNamespaces(_returnEnv));
+
+                               
+                                        return (com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse)object;
+                                   
+         }catch(org.apache.axis2.AxisFault f){
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt!=null){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"searchRecipeByUserName"))){
+                    //make the fault by reflection
+                    try{
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"searchRecipeByUserName"));
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+                        //message class
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"searchRecipeByUserName"));
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+                                   new java.lang.Class[]{messageClass});
+                        m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    }catch(java.lang.ClassCastException e){
+                       // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }  catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }   catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }
+                }else{
+                    throw f;
+                }
+            }else{
+                throw f;
+            }
+            } finally {
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
+            }
+        }
+            
+                /**
+                * Auto generated method signature for Asynchronous Invocations
+                * 
+                * @see com.rb.testClient.Recipe#startsearchRecipeByUserName
+                    * @param searchRecipeByUserName6
+                
+                */
+                public  void startsearchRecipeByUserName(
+
+                 com.rb.testClient.RecipeStub.SearchRecipeByUserName searchRecipeByUserName6,
+
+                  final com.rb.testClient.RecipeCallbackHandler callback)
+
+                throws java.rmi.RemoteException{
+
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
+             _operationClient.getOptions().setAction("\"\"");
+             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_LOCATION,"searchRecipeByUserName");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.ENABLE_REST,true);
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.HTTP_METHOD,"POST");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.CONTENT_TYPE,"application/xml");
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.Constants.Configuration.MESSAGE_TYPE,"application/xml");
+              
+
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env=null;
+              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+                    
+                                    //Style is Doc.
+                                    
+                                                    
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    searchRecipeByUserName6,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                    "searchRecipeByUserName")), new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                    "searchRecipeByUserName"));
+                                                
+        // adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+
+                    
+                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                            try {
+                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+                                
+                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
+                                                                         com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse.class,
+                                                                         getEnvelopeNamespaces(resultEnv));
+                                        callback.receiveResultsearchRecipeByUserName(
+                                        (com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse)object);
+                                        
+                            } catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorsearchRecipeByUserName(e);
+                            }
+                            }
+
+                            public void onError(java.lang.Exception error) {
+								if (error instanceof org.apache.axis2.AxisFault) {
+									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+									org.apache.axiom.om.OMElement faultElt = f.getDetail();
+									if (faultElt!=null){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"searchRecipeByUserName"))){
+											//make the fault by reflection
+											try{
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"searchRecipeByUserName"));
+													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+													//message class
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"searchRecipeByUserName"));
+														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+															new java.lang.Class[]{messageClass});
+													m.invoke(ex,new java.lang.Object[]{messageObject});
+													
+					
+										            callback.receiveErrorsearchRecipeByUserName(new java.rmi.RemoteException(ex.getMessage(), ex));
+                                            } catch(java.lang.ClassCastException e){
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            } catch (java.lang.ClassNotFoundException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            } catch (java.lang.NoSuchMethodException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            } catch (java.lang.IllegalAccessException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            } catch (java.lang.InstantiationException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            } catch (org.apache.axis2.AxisFault e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorsearchRecipeByUserName(f);
+                                            }
+									    } else {
+										    callback.receiveErrorsearchRecipeByUserName(f);
+									    }
+									} else {
+									    callback.receiveErrorsearchRecipeByUserName(f);
+									}
+								} else {
+								    callback.receiveErrorsearchRecipeByUserName(error);
+								}
+                            }
+
+                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                                onError(fault);
+                            }
+
+                            public void onComplete() {
+                                try {
+                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                                } catch (org.apache.axis2.AxisFault axisFault) {
+                                    callback.receiveErrorsearchRecipeByUserName(axisFault);
+                                }
+                            }
+                });
+                        
+
+          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if ( _operations[3].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+          _operations[3].setMessageReceiver(
+                    _callbackReceiver);
+        }
+
+           //execute the operation client
+           _operationClient.execute(false);
+
+                    }
+                
+                    /**
+                     * Auto generated method signature
+                     * 
+                     * @see com.rb.testClient.Recipe#getRecipeIngredient
+                     * @param getRecipeIngredient8
+                    
+                     */
+
+                    
+
+                            public  com.rb.testClient.RecipeStub.GetRecipeIngredientResponse getRecipeIngredient(
+
+                            com.rb.testClient.RecipeStub.GetRecipeIngredient getRecipeIngredient8)
+                        
+
+                    throws java.rmi.RemoteException
+                    
+                    {
+              org.apache.axis2.context.MessageContext _messageContext = null;
+              try{
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1234,7 +1535,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipeIngredient6,
+                                                    getRecipeIngredient8,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeIngredient")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeIngredient"));
@@ -1321,18 +1622,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startgetRecipeIngredient
-                    * @param getRecipeIngredient6
+                    * @param getRecipeIngredient8
                 
                 */
                 public  void startgetRecipeIngredient(
 
-                 com.rb.testClient.RecipeStub.GetRecipeIngredient getRecipeIngredient6,
+                 com.rb.testClient.RecipeStub.GetRecipeIngredient getRecipeIngredient8,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1361,7 +1662,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipeIngredient6,
+                                                    getRecipeIngredient8,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeIngredient")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeIngredient"));
@@ -1463,9 +1764,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[3].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[4].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[3].setMessageReceiver(
+          _operations[4].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -1478,7 +1779,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#createRecipe
-                     * @param createRecipe8
+                     * @param createRecipe10
                     
                      */
 
@@ -1486,7 +1787,7 @@
 
                             public  com.rb.testClient.RecipeStub.CreateRecipeResponse createRecipe(
 
-                            com.rb.testClient.RecipeStub.CreateRecipe createRecipe8)
+                            com.rb.testClient.RecipeStub.CreateRecipe createRecipe10)
                         
 
                     throws java.rmi.RemoteException
@@ -1494,7 +1795,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[5].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1523,7 +1824,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    createRecipe8,
+                                                    createRecipe10,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "createRecipe")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "createRecipe"));
@@ -1610,18 +1911,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startcreateRecipe
-                    * @param createRecipe8
+                    * @param createRecipe10
                 
                 */
                 public  void startcreateRecipe(
 
-                 com.rb.testClient.RecipeStub.CreateRecipe createRecipe8,
+                 com.rb.testClient.RecipeStub.CreateRecipe createRecipe10,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[5].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1650,7 +1951,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    createRecipe8,
+                                                    createRecipe10,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "createRecipe")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "createRecipe"));
@@ -1752,9 +2053,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[4].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[5].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[4].setMessageReceiver(
+          _operations[5].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -1767,7 +2068,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#searchRecipeByState
-                     * @param searchRecipeByState10
+                     * @param searchRecipeByState12
                     
                      */
 
@@ -1775,7 +2076,7 @@
 
                             public  com.rb.testClient.RecipeStub.SearchRecipeByStateResponse searchRecipeByState(
 
-                            com.rb.testClient.RecipeStub.SearchRecipeByState searchRecipeByState10)
+                            com.rb.testClient.RecipeStub.SearchRecipeByState searchRecipeByState12)
                         
 
                     throws java.rmi.RemoteException
@@ -1783,7 +2084,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[5].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[6].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1812,7 +2113,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByState10,
+                                                    searchRecipeByState12,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByState")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByState"));
@@ -1899,18 +2200,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startsearchRecipeByState
-                    * @param searchRecipeByState10
+                    * @param searchRecipeByState12
                 
                 */
                 public  void startsearchRecipeByState(
 
-                 com.rb.testClient.RecipeStub.SearchRecipeByState searchRecipeByState10,
+                 com.rb.testClient.RecipeStub.SearchRecipeByState searchRecipeByState12,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[5].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[6].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1939,7 +2240,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByState10,
+                                                    searchRecipeByState12,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByState")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByState"));
@@ -2041,9 +2342,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[5].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[6].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[5].setMessageReceiver(
+          _operations[6].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -2056,7 +2357,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#getRecipeByAccountWithAmount
-                     * @param getRecipeByAccountWithAmount12
+                     * @param getRecipeByAccountWithAmount14
                     
                      */
 
@@ -2064,7 +2365,7 @@
 
                             public  com.rb.testClient.RecipeStub.GetRecipeByAccountWithAmountResponse getRecipeByAccountWithAmount(
 
-                            com.rb.testClient.RecipeStub.GetRecipeByAccountWithAmount getRecipeByAccountWithAmount12)
+                            com.rb.testClient.RecipeStub.GetRecipeByAccountWithAmount getRecipeByAccountWithAmount14)
                         
 
                     throws java.rmi.RemoteException
@@ -2072,7 +2373,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[6].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[7].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2101,7 +2402,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipeByAccountWithAmount12,
+                                                    getRecipeByAccountWithAmount14,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeByAccountWithAmount")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeByAccountWithAmount"));
@@ -2188,18 +2489,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startgetRecipeByAccountWithAmount
-                    * @param getRecipeByAccountWithAmount12
+                    * @param getRecipeByAccountWithAmount14
                 
                 */
                 public  void startgetRecipeByAccountWithAmount(
 
-                 com.rb.testClient.RecipeStub.GetRecipeByAccountWithAmount getRecipeByAccountWithAmount12,
+                 com.rb.testClient.RecipeStub.GetRecipeByAccountWithAmount getRecipeByAccountWithAmount14,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[6].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[7].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2228,7 +2529,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipeByAccountWithAmount12,
+                                                    getRecipeByAccountWithAmount14,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeByAccountWithAmount")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeByAccountWithAmount"));
@@ -2330,9 +2631,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[6].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[7].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[6].setMessageReceiver(
+          _operations[7].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -2345,7 +2646,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#getRecipesAsYouWant
-                     * @param getRecipesAsYouWant14
+                     * @param getRecipesAsYouWant16
                     
                      */
 
@@ -2353,7 +2654,7 @@
 
                             public  com.rb.testClient.RecipeStub.GetRecipesAsYouWantResponse getRecipesAsYouWant(
 
-                            com.rb.testClient.RecipeStub.GetRecipesAsYouWant getRecipesAsYouWant14)
+                            com.rb.testClient.RecipeStub.GetRecipesAsYouWant getRecipesAsYouWant16)
                         
 
                     throws java.rmi.RemoteException
@@ -2361,7 +2662,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[7].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[8].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2390,7 +2691,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipesAsYouWant14,
+                                                    getRecipesAsYouWant16,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipesAsYouWant")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipesAsYouWant"));
@@ -2477,18 +2778,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startgetRecipesAsYouWant
-                    * @param getRecipesAsYouWant14
+                    * @param getRecipesAsYouWant16
                 
                 */
                 public  void startgetRecipesAsYouWant(
 
-                 com.rb.testClient.RecipeStub.GetRecipesAsYouWant getRecipesAsYouWant14,
+                 com.rb.testClient.RecipeStub.GetRecipesAsYouWant getRecipesAsYouWant16,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[7].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[8].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2517,7 +2818,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipesAsYouWant14,
+                                                    getRecipesAsYouWant16,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipesAsYouWant")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipesAsYouWant"));
@@ -2619,9 +2920,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[7].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[8].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[7].setMessageReceiver(
+          _operations[8].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -2634,7 +2935,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#insertRecipeStep
-                     * @param insertRecipeStep16
+                     * @param insertRecipeStep18
                     
                      */
 
@@ -2642,7 +2943,7 @@
 
                             public  com.rb.testClient.RecipeStub.InsertRecipeStepResponse insertRecipeStep(
 
-                            com.rb.testClient.RecipeStub.InsertRecipeStep insertRecipeStep16)
+                            com.rb.testClient.RecipeStub.InsertRecipeStep insertRecipeStep18)
                         
 
                     throws java.rmi.RemoteException
@@ -2650,7 +2951,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[8].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[9].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2679,7 +2980,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    insertRecipeStep16,
+                                                    insertRecipeStep18,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertRecipeStep")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertRecipeStep"));
@@ -2766,18 +3067,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startinsertRecipeStep
-                    * @param insertRecipeStep16
+                    * @param insertRecipeStep18
                 
                 */
                 public  void startinsertRecipeStep(
 
-                 com.rb.testClient.RecipeStub.InsertRecipeStep insertRecipeStep16,
+                 com.rb.testClient.RecipeStub.InsertRecipeStep insertRecipeStep18,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[8].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[9].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2806,7 +3107,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    insertRecipeStep16,
+                                                    insertRecipeStep18,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertRecipeStep")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertRecipeStep"));
@@ -2908,9 +3209,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[8].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[9].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[8].setMessageReceiver(
+          _operations[9].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -2923,7 +3224,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#searchRecipeByRate
-                     * @param searchRecipeByRate18
+                     * @param searchRecipeByRate20
                     
                      */
 
@@ -2931,7 +3232,7 @@
 
                             public  com.rb.testClient.RecipeStub.SearchRecipeByRateResponse searchRecipeByRate(
 
-                            com.rb.testClient.RecipeStub.SearchRecipeByRate searchRecipeByRate18)
+                            com.rb.testClient.RecipeStub.SearchRecipeByRate searchRecipeByRate20)
                         
 
                     throws java.rmi.RemoteException
@@ -2939,7 +3240,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[9].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[10].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -2968,7 +3269,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByRate18,
+                                                    searchRecipeByRate20,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByRate")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByRate"));
@@ -3055,18 +3356,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startsearchRecipeByRate
-                    * @param searchRecipeByRate18
+                    * @param searchRecipeByRate20
                 
                 */
                 public  void startsearchRecipeByRate(
 
-                 com.rb.testClient.RecipeStub.SearchRecipeByRate searchRecipeByRate18,
+                 com.rb.testClient.RecipeStub.SearchRecipeByRate searchRecipeByRate20,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[9].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[10].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3095,7 +3396,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByRate18,
+                                                    searchRecipeByRate20,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByRate")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByRate"));
@@ -3197,9 +3498,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[9].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[10].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[9].setMessageReceiver(
+          _operations[10].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -3212,7 +3513,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#getRecipeDetails
-                     * @param getRecipeDetails20
+                     * @param getRecipeDetails22
                     
                      */
 
@@ -3220,7 +3521,7 @@
 
                             public  com.rb.testClient.RecipeStub.GetRecipeDetailsResponse getRecipeDetails(
 
-                            com.rb.testClient.RecipeStub.GetRecipeDetails getRecipeDetails20)
+                            com.rb.testClient.RecipeStub.GetRecipeDetails getRecipeDetails22)
                         
 
                     throws java.rmi.RemoteException
@@ -3228,7 +3529,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[10].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3257,7 +3558,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipeDetails20,
+                                                    getRecipeDetails22,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeDetails")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeDetails"));
@@ -3344,18 +3645,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startgetRecipeDetails
-                    * @param getRecipeDetails20
+                    * @param getRecipeDetails22
                 
                 */
                 public  void startgetRecipeDetails(
 
-                 com.rb.testClient.RecipeStub.GetRecipeDetails getRecipeDetails20,
+                 com.rb.testClient.RecipeStub.GetRecipeDetails getRecipeDetails22,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[10].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3384,7 +3685,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getRecipeDetails20,
+                                                    getRecipeDetails22,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeDetails")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getRecipeDetails"));
@@ -3486,9 +3787,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[10].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[11].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[10].setMessageReceiver(
+          _operations[11].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -3501,7 +3802,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#rateRecipe
-                     * @param rateRecipe22
+                     * @param rateRecipe24
                     
                      */
 
@@ -3509,7 +3810,7 @@
 
                             public  com.rb.testClient.RecipeStub.RateRecipeResponse rateRecipe(
 
-                            com.rb.testClient.RecipeStub.RateRecipe rateRecipe22)
+                            com.rb.testClient.RecipeStub.RateRecipe rateRecipe24)
                         
 
                     throws java.rmi.RemoteException
@@ -3517,7 +3818,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3546,7 +3847,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    rateRecipe22,
+                                                    rateRecipe24,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "rateRecipe")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "rateRecipe"));
@@ -3633,18 +3934,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startrateRecipe
-                    * @param rateRecipe22
+                    * @param rateRecipe24
                 
                 */
                 public  void startrateRecipe(
 
-                 com.rb.testClient.RecipeStub.RateRecipe rateRecipe22,
+                 com.rb.testClient.RecipeStub.RateRecipe rateRecipe24,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3673,7 +3974,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    rateRecipe22,
+                                                    rateRecipe24,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "rateRecipe")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "rateRecipe"));
@@ -3775,9 +4076,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[11].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[12].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[11].setMessageReceiver(
+          _operations[12].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -3790,7 +4091,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#getAllRecipes
-                     * @param getAllRecipes24
+                     * @param getAllRecipes26
                     
                      */
 
@@ -3798,7 +4099,7 @@
 
                             public  com.rb.testClient.RecipeStub.GetAllRecipesResponse getAllRecipes(
 
-                            com.rb.testClient.RecipeStub.GetAllRecipes getAllRecipes24)
+                            com.rb.testClient.RecipeStub.GetAllRecipes getAllRecipes26)
                         
 
                     throws java.rmi.RemoteException
@@ -3806,7 +4107,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3835,7 +4136,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getAllRecipes24,
+                                                    getAllRecipes26,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getAllRecipes")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getAllRecipes"));
@@ -3922,18 +4223,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startgetAllRecipes
-                    * @param getAllRecipes24
+                    * @param getAllRecipes26
                 
                 */
                 public  void startgetAllRecipes(
 
-                 com.rb.testClient.RecipeStub.GetAllRecipes getAllRecipes24,
+                 com.rb.testClient.RecipeStub.GetAllRecipes getAllRecipes26,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3962,7 +4263,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getAllRecipes24,
+                                                    getAllRecipes26,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getAllRecipes")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "getAllRecipes"));
@@ -4064,9 +4365,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[12].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[13].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[12].setMessageReceiver(
+          _operations[13].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -4079,7 +4380,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#searchRecipeByKeyWord
-                     * @param searchRecipeByKeyWord26
+                     * @param searchRecipeByKeyWord28
                     
                      */
 
@@ -4087,7 +4388,7 @@
 
                             public  com.rb.testClient.RecipeStub.SearchRecipeByKeyWordResponse searchRecipeByKeyWord(
 
-                            com.rb.testClient.RecipeStub.SearchRecipeByKeyWord searchRecipeByKeyWord26)
+                            com.rb.testClient.RecipeStub.SearchRecipeByKeyWord searchRecipeByKeyWord28)
                         
 
                     throws java.rmi.RemoteException
@@ -4095,7 +4396,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[14].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4124,7 +4425,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByKeyWord26,
+                                                    searchRecipeByKeyWord28,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByKeyWord")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByKeyWord"));
@@ -4211,18 +4512,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startsearchRecipeByKeyWord
-                    * @param searchRecipeByKeyWord26
+                    * @param searchRecipeByKeyWord28
                 
                 */
                 public  void startsearchRecipeByKeyWord(
 
-                 com.rb.testClient.RecipeStub.SearchRecipeByKeyWord searchRecipeByKeyWord26,
+                 com.rb.testClient.RecipeStub.SearchRecipeByKeyWord searchRecipeByKeyWord28,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[14].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4251,7 +4552,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByKeyWord26,
+                                                    searchRecipeByKeyWord28,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByKeyWord")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByKeyWord"));
@@ -4353,9 +4654,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[13].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[14].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[13].setMessageReceiver(
+          _operations[14].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -4368,7 +4669,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#searchRecipeByCategory
-                     * @param searchRecipeByCategory28
+                     * @param searchRecipeByCategory30
                     
                      */
 
@@ -4376,7 +4677,7 @@
 
                             public  com.rb.testClient.RecipeStub.SearchRecipeByCategoryResponse searchRecipeByCategory(
 
-                            com.rb.testClient.RecipeStub.SearchRecipeByCategory searchRecipeByCategory28)
+                            com.rb.testClient.RecipeStub.SearchRecipeByCategory searchRecipeByCategory30)
                         
 
                     throws java.rmi.RemoteException
@@ -4384,7 +4685,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[14].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[15].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4413,7 +4714,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByCategory28,
+                                                    searchRecipeByCategory30,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByCategory")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByCategory"));
@@ -4500,18 +4801,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startsearchRecipeByCategory
-                    * @param searchRecipeByCategory28
+                    * @param searchRecipeByCategory30
                 
                 */
                 public  void startsearchRecipeByCategory(
 
-                 com.rb.testClient.RecipeStub.SearchRecipeByCategory searchRecipeByCategory28,
+                 com.rb.testClient.RecipeStub.SearchRecipeByCategory searchRecipeByCategory30,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[14].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[15].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4540,7 +4841,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    searchRecipeByCategory28,
+                                                    searchRecipeByCategory30,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByCategory")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "searchRecipeByCategory"));
@@ -4642,9 +4943,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[14].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[15].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[14].setMessageReceiver(
+          _operations[15].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -4657,7 +4958,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#insertIngredient
-                     * @param insertIngredient30
+                     * @param insertIngredient32
                     
                      */
 
@@ -4665,7 +4966,7 @@
 
                             public  com.rb.testClient.RecipeStub.InsertIngredientResponse insertIngredient(
 
-                            com.rb.testClient.RecipeStub.InsertIngredient insertIngredient30)
+                            com.rb.testClient.RecipeStub.InsertIngredient insertIngredient32)
                         
 
                     throws java.rmi.RemoteException
@@ -4673,7 +4974,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[15].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[16].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4702,7 +5003,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    insertIngredient30,
+                                                    insertIngredient32,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertIngredient")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertIngredient"));
@@ -4789,18 +5090,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startinsertIngredient
-                    * @param insertIngredient30
+                    * @param insertIngredient32
                 
                 */
                 public  void startinsertIngredient(
 
-                 com.rb.testClient.RecipeStub.InsertIngredient insertIngredient30,
+                 com.rb.testClient.RecipeStub.InsertIngredient insertIngredient32,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[15].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[16].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4829,7 +5130,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    insertIngredient30,
+                                                    insertIngredient32,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertIngredient")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "insertIngredient"));
@@ -4931,9 +5232,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[15].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[16].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[15].setMessageReceiver(
+          _operations[16].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -4946,7 +5247,7 @@
                      * Auto generated method signature
                      * 
                      * @see com.rb.testClient.Recipe#deleteRecipe
-                     * @param deleteRecipe32
+                     * @param deleteRecipe34
                     
                      */
 
@@ -4954,7 +5255,7 @@
 
                             public  com.rb.testClient.RecipeStub.DeleteRecipeResponse deleteRecipe(
 
-                            com.rb.testClient.RecipeStub.DeleteRecipe deleteRecipe32)
+                            com.rb.testClient.RecipeStub.DeleteRecipe deleteRecipe34)
                         
 
                     throws java.rmi.RemoteException
@@ -4962,7 +5263,7 @@
                     {
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[16].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[17].getName());
               _operationClient.getOptions().setAction("\"\"");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4991,7 +5292,7 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    deleteRecipe32,
+                                                    deleteRecipe34,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "deleteRecipe")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "deleteRecipe"));
@@ -5078,18 +5379,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see com.rb.testClient.Recipe#startdeleteRecipe
-                    * @param deleteRecipe32
+                    * @param deleteRecipe34
                 
                 */
                 public  void startdeleteRecipe(
 
-                 com.rb.testClient.RecipeStub.DeleteRecipe deleteRecipe32,
+                 com.rb.testClient.RecipeStub.DeleteRecipe deleteRecipe34,
 
                   final com.rb.testClient.RecipeCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[16].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[17].getName());
              _operationClient.getOptions().setAction("\"\"");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -5118,7 +5419,7 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    deleteRecipe32,
+                                                    deleteRecipe34,
                                                     optimizeContent(new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "deleteRecipe")), new javax.xml.namespace.QName("http://webServices.rb.com",
                                                     "deleteRecipe"));
@@ -5220,9 +5521,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[16].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[17].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[16].setMessageReceiver(
+          _operations[17].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -10173,6 +10474,453 @@
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
                                 return (GetAllRecipesResponse)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://webServices.rb.com","return").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.set_return(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
+        public static class SearchRecipeByUserNameResponse
+        implements org.apache.axis2.databinding.ADBBean{
+        
+                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                "http://webServices.rb.com",
+                "searchRecipeByUserNameResponse",
+                "ns1");
+
+            
+
+                        /**
+                        * field for _return
+                        */
+
+                        
+                                    protected java.lang.String local_return ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean local_returnTracker = false ;
+
+                           public boolean is_returnSpecified(){
+                               return local_returnTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String get_return(){
+                               return local_return;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param _return
+                               */
+                               public void set_return(java.lang.String param){
+                            local_returnTracker = true;
+                                   
+                                            this.local_return=param;
+                                    
+
+                               }
+                            
+
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
+               return factory.createOMElement(dataSource,MY_QNAME);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://webServices.rb.com");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":searchRecipeByUserNameResponse",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "searchRecipeByUserNameResponse",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (local_returnTracker){
+                                    namespace = "http://webServices.rb.com";
+                                    writeStartElement(null, namespace, "return", xmlWriter);
+                             
+
+                                          if (local_return==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(local_return);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://webServices.rb.com")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
+                while (true) {
+                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
+                    if (uri == null || uri.length() == 0) {
+                        break;
+                    }
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (local_returnTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                                      "return"));
+                                 
+                                         elementList.add(local_return==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
+                                    }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static SearchRecipeByUserNameResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            SearchRecipeByUserNameResponse object =
+                new SearchRecipeByUserNameResponse();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"searchRecipeByUserNameResponse".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (SearchRecipeByUserNameResponse)ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -18821,6 +19569,543 @@
         }
            
     
+        public static class SearchRecipeByUserName
+        implements org.apache.axis2.databinding.ADBBean{
+        
+                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                "http://webServices.rb.com",
+                "searchRecipeByUserName",
+                "ns1");
+
+            
+
+                        /**
+                        * field for UserName
+                        */
+
+                        
+                                    protected java.lang.String localUserName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localUserNameTracker = false ;
+
+                           public boolean isUserNameSpecified(){
+                               return localUserNameTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getUserName(){
+                               return localUserName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param UserName
+                               */
+                               public void setUserName(java.lang.String param){
+                            localUserNameTracker = true;
+                                   
+                                            this.localUserName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Amount
+                        */
+
+                        
+                                    protected int localAmount ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAmountTracker = false ;
+
+                           public boolean isAmountSpecified(){
+                               return localAmountTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getAmount(){
+                               return localAmount;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Amount
+                               */
+                               public void setAmount(int param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       localAmountTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
+                                   
+                                            this.localAmount=param;
+                                    
+
+                               }
+                            
+
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
+               return factory.createOMElement(dataSource,MY_QNAME);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://webServices.rb.com");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":searchRecipeByUserName",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "searchRecipeByUserName",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localUserNameTracker){
+                                    namespace = "http://webServices.rb.com";
+                                    writeStartElement(null, namespace, "userName", xmlWriter);
+                             
+
+                                          if (localUserName==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localUserName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localAmountTracker){
+                                    namespace = "http://webServices.rb.com";
+                                    writeStartElement(null, namespace, "amount", xmlWriter);
+                             
+                                               if (localAmount==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("amount cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAmount));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://webServices.rb.com")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
+                while (true) {
+                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
+                    if (uri == null || uri.length() == 0) {
+                        break;
+                    }
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localUserNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                                      "userName"));
+                                 
+                                         elementList.add(localUserName==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUserName));
+                                    } if (localAmountTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://webServices.rb.com",
+                                                                      "amount"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAmount));
+                            }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static SearchRecipeByUserName parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            SearchRecipeByUserName object =
+                new SearchRecipeByUserName();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"searchRecipeByUserName".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (SearchRecipeByUserName)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://webServices.rb.com","userName").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setUserName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://webServices.rb.com","amount").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"amount" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAmount(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                               object.setAmount(java.lang.Integer.MIN_VALUE);
+                                           
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
         public static class GetAllRecipes
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -20595,6 +21880,34 @@
 
             }
         
+            private  org.apache.axiom.om.OMElement  toOM(com.rb.testClient.RecipeStub.SearchRecipeByUserName param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(com.rb.testClient.RecipeStub.SearchRecipeByUserName.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
+            private  org.apache.axiom.om.OMElement  toOM(com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
             private  org.apache.axiom.om.OMElement  toOM(com.rb.testClient.RecipeStub.GetRecipeIngredient param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
@@ -21051,6 +22364,27 @@
 
                              
                                     
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.rb.testClient.RecipeStub.SearchRecipeByUserName param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        throws org.apache.axis2.AxisFault{
+
+                                             
+                                                    try{
+
+                                                            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.rb.testClient.RecipeStub.SearchRecipeByUserName.MY_QNAME,factory));
+                                                            return emptyEnvelope;
+                                                        } catch(org.apache.axis2.databinding.ADBException e){
+                                                            throw org.apache.axis2.AxisFault.makeFault(e);
+                                                        }
+                                                
+
+                                        }
+                                
+                             
+                             /* methods to provide back word compatibility */
+
+                             
+                                    
                                         private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.rb.testClient.RecipeStub.GetRecipeIngredient param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
@@ -21399,6 +22733,20 @@
                 if (com.rb.testClient.RecipeStub.GetRecipeByAccountResponse.class.equals(type)){
                 
                            return com.rb.testClient.RecipeStub.GetRecipeByAccountResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (com.rb.testClient.RecipeStub.SearchRecipeByUserName.class.equals(type)){
+                
+                           return com.rb.testClient.RecipeStub.SearchRecipeByUserName.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse.class.equals(type)){
+                
+                           return com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

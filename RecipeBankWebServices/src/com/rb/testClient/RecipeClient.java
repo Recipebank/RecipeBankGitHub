@@ -201,11 +201,19 @@ public class RecipeClient {
 		System.out.println("Response:"+ response.get_return());*/
 		
 		//test deleteRecipe
-		com.rb.testClient.RecipeStub.DeleteRecipe request = new com.rb.testClient.RecipeStub.DeleteRecipe();
+	/*	com.rb.testClient.RecipeStub.DeleteRecipe request = new com.rb.testClient.RecipeStub.DeleteRecipe();
 		JSONObject stepObject = new JSONObject();
 		stepObject.put("RecipeId", 2);
 		request.setJsonObject(stepObject.toString());
 		com.rb.testClient.RecipeStub.DeleteRecipeResponse response = stub.deleteRecipe(request);
+		System.out.println("Response:"+ response.get_return());*/
+		
+		//test search recipe by username
+		com.rb.testClient.RecipeStub.SearchRecipeByUserName request = new com.rb.testClient.RecipeStub.SearchRecipeByUserName();
+		request.setAmount(4);
+		request.setUserName("eve");
+		
+		com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse response = stub.searchRecipeByUserName(request);
 		System.out.println("Response:"+ response.get_return());
 	}
 

@@ -93,6 +93,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for searchRecipeByUserName method
+            * override this method for handling normal response from searchRecipeByUserName operation
+            */
+           public void receiveResultsearchRecipeByUserName(
+                    com.rb.testClient.RecipeStub.SearchRecipeByUserNameResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from searchRecipeByUserName operation
+           */
+            public void receiveErrorsearchRecipeByUserName(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for getRecipeIngredient method
             * override this method for handling normal response from getRecipeIngredient operation
             */

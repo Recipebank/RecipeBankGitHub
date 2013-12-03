@@ -371,5 +371,34 @@ public class Recipe {
 		}
 		return result;
 	}
+	//Author:Huijun Sun
+	public String searchRecipeByUserName(String userName,int amount)
+	{
+		String resultString="";
+		String sqlString = "select a.AccountId,NickName,RecipeId,RecipeTitle,Description,rate,RecipeState,photo "
+				+ "from recipebank.recipe r join recipebank.account a on r.AccountID=a.AccountId "
+				+ "where recipeState=0 and a.NickName like '%"+userName+"%' "
+				+ "order by RecipeId desc limit "
+				+ amount;
+		try {
+			conn = ConnectDB.getConnection();
+			
+			st = conn.prepareStatement(sqlString);
+			
+			
+			rs = st.executeQuery();
+			if(rs.next())
+			{
+				recipeString = ProduceJSON.resultSetToJsonArray(rs);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectDB.closeConnection(conn);
+		}
+		
+		return resultString;
+	}
 
 }
