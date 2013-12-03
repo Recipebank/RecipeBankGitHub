@@ -24,7 +24,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="29dp"
-        android:text="User Name"
+        android:text="Full Name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -85,7 +85,7 @@
         android:layout_alignLeft="@+id/editText3"
         android:layout_below="@+id/editText3"
         android:layout_marginTop="29dp"
-        android:onClick="AfterRegister"
+        android:onClick="Register"
         android:text="Register" />
 
 </RelativeLayout>

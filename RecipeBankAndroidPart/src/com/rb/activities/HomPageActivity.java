@@ -15,9 +15,11 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Bitmap.Config;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +52,9 @@ public class HomPageActivity extends Activity {
 	ArrayList<String> al=new ArrayList<String>();
 	ArrayList<byte[]> phtArr=new ArrayList<byte[]>();
 	ArrayList<String> alCat=new ArrayList<String>();
+	ArrayList<String> RecipeIdList=new ArrayList<String>();
+	String recipeId=null;
+	
 	ListView lv=null;
 	Spinner spinnerCat=null;
 	InputStream is = null;
@@ -72,6 +77,8 @@ public class HomPageActivity extends Activity {
 	LinearLayout ll=null;
 	
 	public static int flag=0;
+	
+	ProgressDialog progressDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -171,29 +178,29 @@ public class HomPageActivity extends Activity {
 		if(view.equals(im1))
 		{
 
-			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
-			intent.putExtra("searchKey",tv1.getText().toString());
+			Intent intent=new Intent(HomPageActivity.this,DetailedViewActivity.class);
+			intent.putExtra("recipeId",RecipeIdList.get(0));
 			startActivity(intent);
 		}
 		else if(view.equals(im2))
 		{
 
-			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
-			intent.putExtra("searchKey",tv2.getText().toString());
+			Intent intent=new Intent(HomPageActivity.this,DetailedViewActivity.class);
+			intent.putExtra("recipeId",RecipeIdList.get(1));
 			startActivity(intent);
 		}
 		else if(view.equals(im3))
 		{
 
-			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
-			intent.putExtra("searchKey",tv3.getText().toString());
+			Intent intent=new Intent(HomPageActivity.this,DetailedViewActivity.class);
+			intent.putExtra("recipeId",RecipeIdList.get(2));
 			startActivity(intent);
 		}
 		else if(view.equals(im4))
 		{
 
-			Intent intent=new Intent(HomPageActivity.this,SearchResultActivity.class);
-			intent.putExtra("searchKey",tv4.getText().toString());
+			Intent intent=new Intent(HomPageActivity.this,DetailedViewActivity.class);
+			intent.putExtra("recipeId",RecipeIdList.get(3));
 			startActivity(intent);
 		}
 	}
@@ -213,7 +220,7 @@ public class HomPageActivity extends Activity {
 		@Override
 		protected void onPostExecute(Void result) {
 			
-			 
+			// progressDialog.dismiss();
 	                  
 	                
 //	                 Bitmap mutableBitmap = bmp.copy(Bitmap.Config.ARGB_8888, true);
@@ -223,7 +230,11 @@ public class HomPageActivity extends Activity {
 			 			//ll.addView(tv0);
 			 			Data=phtArr.get(0);
 			 			is = new ByteArrayInputStream(Data);
-			 			Bitmap bmp0 = BitmapFactory.decodeByteArray(Data, 0, Data.length);
+			 			BitmapFactory.Options options=new BitmapFactory.Options();
+			            options.inJustDecodeBounds = false;
+			            options.inPreferredConfig = Config.RGB_565;
+			            options.inDither = true;
+			            Bitmap bmp0 = BitmapFactory.decodeByteArray(Data, 0, Data.length,options);
 			 			//ImageView imageView0 = new ImageView(HomPageActivity.this);
 			 			im1.setImageBitmap(bmp0);
 			 		//	TableLayout.LayoutParams parms0 = new TableLayout.LayoutParams(300,100);
@@ -237,7 +248,11 @@ public class HomPageActivity extends Activity {
 	                 //ll.addView(tv);
 	                 Data=phtArr.get(1);
 	                 is = new ByteArrayInputStream(Data);
-	                 Bitmap bmp = BitmapFactory.decodeByteArray(Data, 0, Data.length);
+	                 BitmapFactory.Options options1=new BitmapFactory.Options();
+	                 options1.inJustDecodeBounds = false;
+	                 options1.inPreferredConfig = Config.RGB_565;
+	                 options1.inDither = true;
+	                 Bitmap bmp = BitmapFactory.decodeByteArray(Data, 0, Data.length,options1);
                 	// ImageView imageView = new ImageView(HomPageActivity.this);
 	                 im2.setImageBitmap(bmp);
 	              //   TableLayout.LayoutParams parms = new TableLayout.LayoutParams(300,100);
@@ -251,7 +266,11 @@ public class HomPageActivity extends Activity {
 	                 Data=phtArr.get(2);
 	                 is = new ByteArrayInputStream(Data);
 	                 
-	                 Bitmap bmp1 = BitmapFactory.decodeByteArray(Data, 0, Data.length);
+	                 BitmapFactory.Options options2=new BitmapFactory.Options();
+	                 options2.inJustDecodeBounds = false;
+	                 options2.inPreferredConfig = Config.RGB_565;
+	                 options2.inDither = true;
+	                 Bitmap bmp1 = BitmapFactory.decodeByteArray(Data, 0, Data.length,options2);
                 	 //ImageView imageView1 = new ImageView(HomPageActivity.this);
 	                 im3.setImageBitmap(bmp1);
 	              //   TableLayout.LayoutParams parms1 = new TableLayout.LayoutParams(300,100);
@@ -265,7 +284,11 @@ public class HomPageActivity extends Activity {
 	                 Data=phtArr.get(3);
 	                 is = new ByteArrayInputStream(Data);
 	                 
-	                 Bitmap bmp2 = BitmapFactory.decodeByteArray(Data, 0, Data.length);
+	                 BitmapFactory.Options options3=new BitmapFactory.Options();
+	                 options3.inJustDecodeBounds = false;
+	                 options3.inPreferredConfig = Config.RGB_565;
+	                 options3.inDither = true;
+	                 Bitmap bmp2 = BitmapFactory.decodeByteArray(Data, 0, Data.length,options3);
                 	 //ImageView imageView1 = new ImageView(HomPageActivity.this);
 	                 im4.setImageBitmap(bmp2);
 	              //   TableLayout.LayoutParams parms2 = new TableLayout.LayoutParams(300,100);
@@ -290,6 +313,8 @@ public class HomPageActivity extends Activity {
 
 		@Override
 		protected void onPreExecute() {
+		//	super.onPreExecute();
+		//	progressDialog = ProgressDialog.show(HomPageActivity.this, "Wait", "Downloading...");
 			Log.i(TAG, "onPreExecute");
 		}
 
@@ -315,6 +340,7 @@ public class HomPageActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(Void result) {
+			
 			 ArrayAdapter<String> arrayAdapter =      
 	                 new ArrayAdapter<String>(HomPageActivity.this,android.R.layout.simple_list_item_1, alCat);
 	                
@@ -327,6 +353,7 @@ public class HomPageActivity extends Activity {
 
 		@Override
 		protected void onPreExecute() {
+			
 			Log.i(TAG, "onPreExecute");
 		}
 
@@ -372,7 +399,7 @@ public class HomPageActivity extends Activity {
 				
 				al.add(jObject.get("RecipeTitle").toString());
 				phtArr.add(Base64.decode(jObject.get("photo").toString()));
-				
+				RecipeIdList.add(jObject.get("RecipeId").toString());
 				
 				
 			}

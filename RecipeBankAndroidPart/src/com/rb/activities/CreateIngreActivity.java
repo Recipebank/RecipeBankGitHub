@@ -31,8 +31,10 @@ public class CreateIngreActivity extends Activity {
 	private String TAG = "Incredi";
 	EditText et1=null;
 	EditText et2=null;
+	EditText et3=null;
 	String etval1=null;
 	String etval2=null;
+	String etval3=null;
 	
 
 	@Override
@@ -43,6 +45,7 @@ public class CreateIngreActivity extends Activity {
 		recipeId=intent.getStringExtra("recipeId");
 		et1=(EditText) findViewById(R.id.editText1);
 		et2=(EditText) findViewById(R.id.editText2);
+		et3=(EditText) findViewById(R.id.editText3);
 	}
 
 	@Override
@@ -116,12 +119,14 @@ public class CreateIngreActivity extends Activity {
 	{
 		etval1=et1.getText().toString();
 		etval2=et2.getText().toString();
-	
+		etval3=et3.getText().toString();
+		
 		
 		JSONObject json=new JSONObject();
 		json.put("ingredientMeasure", etval1);
 		json.put("IngredientQuanlity", etval2);
 		json.put("RecipeId", recipeId);
+		json.put("IngredientName", etval3);
 		
 		SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 		PropertyInfo KeyProp = new PropertyInfo();

@@ -82,6 +82,8 @@ public class AddStepsActivity extends Activity {
 	{
 		Toast toast = Toast.makeText(this,"Recipe Created", Toast.LENGTH_LONG);
 		toast.show();
+		Intent intent=new Intent(AddStepsActivity.this,HomPageActivity.class);
+		startActivity(intent);
 	}
 	
 	public void InsertStep(View view)

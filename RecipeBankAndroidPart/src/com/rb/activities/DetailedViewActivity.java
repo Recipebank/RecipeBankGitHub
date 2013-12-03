@@ -17,8 +17,10 @@ import org.ksoap2.transport.HttpTransportSE;
 import com.rb.util.Ipconfig;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -40,12 +42,14 @@ public class DetailedViewActivity extends Activity {
 	ArrayList<byte[]> phtArr=new ArrayList<byte[]>();
 	ArrayList<String> alDesc=new ArrayList<String>();
 	InputStream is = null;
-	byte[] Data = new byte[4096];
+	byte[] Data = new byte[1024 * 1024];
 	
 	TextView tv1=null;
 	TextView tv2=null;
 	
 	ImageView im1=null;
+	
+	ProgressDialog progressDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,12 +87,17 @@ public class DetailedViewActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(Void result) {
-			
+			progressDialog.dismiss();
 			tv1.setText(al.get(0));
  			
  			Data=phtArr.get(0);
  			is = new ByteArrayInputStream(Data);
- 			Bitmap bmp0 = BitmapFactory.decodeByteArray(Data, 0, Data.length);
+ 			BitmapFactory.Options options=new BitmapFactory.Options();
+            options.inJustDecodeBounds = false;
+            options.inPreferredConfig = Config.RGB_565;
+            options.inDither = true;
+            Bitmap bmp0 = BitmapFactory.decodeByteArray(Data, 0, Data.length,options);
+ 		
  			
  			im1.setImageBitmap(bmp0);
  			tv2.setText(alDesc.get(0));
@@ -100,6 +109,8 @@ public class DetailedViewActivity extends Activity {
 
 		@Override
 		protected void onPreExecute() {
+			super.onPreExecute();
+			progressDialog = ProgressDialog.show(DetailedViewActivity.this, "Connecting", "Please wait");
 			Log.i(TAG, "onPreExecute");
 		}
 
