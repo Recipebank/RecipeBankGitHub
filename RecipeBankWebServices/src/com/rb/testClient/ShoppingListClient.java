@@ -73,12 +73,22 @@ viewRequest.setAccountId(1);
 		// ShoppingListOperation.addIngredientIntoShoppingList(13, 12);
 
 		// test changeShoppingListState
-		com.rb.testClient.ShoppingListStub.ChangeShoppingListState request = new com.rb.testClient.ShoppingListStub.ChangeShoppingListState();
+	/*	com.rb.testClient.ShoppingListStub.ChangeShoppingListState request = new com.rb.testClient.ShoppingListStub.ChangeShoppingListState();
 		request.setShoppingIngredientsId(2);
 		request.setState(1);
 		// Invoking the service
 		com.rb.testClient.ShoppingListStub.ChangeShoppingListStateResponse response = stub
 				.changeShoppingListState(request);
+		System.out.println("Response : " + response.get_return());*/
+		
+		//test addIngredientsIntoShoppingListByRecipeId 
+		com.rb.testClient.ShoppingListStub.AddIngredientsIntoShoppingListByRecipeId request = new com.rb.testClient.ShoppingListStub.AddIngredientsIntoShoppingListByRecipeId();
+		request.setAccountId(1);
+		request.setRecipeId(12);
+		// Invoking the service
+		com.rb.testClient.ShoppingListStub.AddIngredientsIntoShoppingListByRecipeIdResponse response = stub
+				.addIngredientsIntoShoppingListByRecipeId(request);
 		System.out.println("Response : " + response.get_return());
+		
 	}
 }

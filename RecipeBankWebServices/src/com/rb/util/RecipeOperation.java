@@ -26,7 +26,7 @@ public class RecipeOperation {
 			st.setInt(1, Integer.parseInt(recipeHashMap.get("AccountId")));
 			st.setString(2, recipeHashMap.get("RecipeTitle"));
 			st.setString(3, recipeHashMap.get("Description"));
-			byte[] b = recipeHashMap.get("photo").getBytes();
+			byte[] b = recipeHashMap.get("Photo").getBytes();
 			st.setBytes(4, b);
 			st.executeUpdate();
 			rs = st.executeQuery("select LAST_INSERT_ID() from recipebank.recipe limit 1;");
@@ -254,4 +254,5 @@ public class RecipeOperation {
 
 		return result;
 	}
+	
 }

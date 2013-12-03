@@ -1,0 +1,40 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ShoppingListService WSDL service -->
+
+  <service name="ShoppingList" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webServices.rb.com"/>
+      <parameter name="wsdlServiceElement" value="ShoppingListService"/>
+      <parameter name="schemaQualified" value="http://webServices.rb.com"/>
+      <parameter name="wsdlServicePort" value="ShoppingList"/>
+      <parameter name="className" value="com.rb.webServices.ShoppingListSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ShoppingList"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="deleteIngredientFromShoppingList" qname="operNS:deleteIngredientFromShoppingList" xmlns:operNS="http://webServices.rb.com" returnQName="retNS:deleteIngredientFromShoppingListReturn" xmlns:retNS="http://webServices.rb.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ingredientsArray" xmlns:pns="http://webServices.rb.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="viewShoppingList" qname="operNS:viewShoppingList" xmlns:operNS="http://webServices.rb.com" returnQName="retNS:viewShoppingListReturn" xmlns:retNS="http://webServices.rb.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:accountId" xmlns:pns="http://webServices.rb.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="changeShoppingListState" qname="operNS:changeShoppingListState" xmlns:operNS="http://webServices.rb.com" returnQName="retNS:changeShoppingListStateReturn" xmlns:retNS="http://webServices.rb.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:shoppingIngredientsId" xmlns:pns="http://webServices.rb.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:state" xmlns:pns="http://webServices.rb.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addIngredientIntoShoppingList" qname="operNS:addIngredientIntoShoppingList" xmlns:operNS="http://webServices.rb.com" returnQName="retNS:addIngredientIntoShoppingListReturn" xmlns:retNS="http://webServices.rb.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ingredientObject" xmlns:pns="http://webServices.rb.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:accountId" xmlns:pns="http://webServices.rb.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="changeShoppingListState addIngredientIntoShoppingList deleteIngredientFromShoppingList viewShoppingList"/>
+
+  </service>
+</deployment>

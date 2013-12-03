@@ -61,6 +61,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for addIngredientsIntoShoppingListByRecipeId method
+            * override this method for handling normal response from addIngredientsIntoShoppingListByRecipeId operation
+            */
+           public void receiveResultaddIngredientsIntoShoppingListByRecipeId(
+                    com.rb.testClient.ShoppingListStub.AddIngredientsIntoShoppingListByRecipeIdResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from addIngredientsIntoShoppingListByRecipeId operation
+           */
+            public void receiveErroraddIngredientsIntoShoppingListByRecipeId(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for addIngredientIntoShoppingList method
             * override this method for handling normal response from addIngredientIntoShoppingList operation
             */
