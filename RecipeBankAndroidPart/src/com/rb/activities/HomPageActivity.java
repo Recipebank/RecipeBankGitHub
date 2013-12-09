@@ -17,15 +17,19 @@ import org.ksoap2.transport.HttpTransportSE;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,6 +56,7 @@ public class HomPageActivity extends Activity {
 	ArrayList<String> al=new ArrayList<String>();
 	ArrayList<byte[]> phtArr=new ArrayList<byte[]>();
 	ArrayList<String> alCat=new ArrayList<String>();
+	ArrayList<String> alCatID=new ArrayList<String>();
 	ArrayList<String> RecipeIdList=new ArrayList<String>();
 	String recipeId=null;
 	
@@ -64,6 +69,7 @@ public class HomPageActivity extends Activity {
 	TextView tv2=null;
 	TextView tv3=null;
 	TextView tv4=null;
+	TextView tv5=null;
 	
 	ImageView im1=null;
 	ImageView im2=null;
@@ -79,6 +85,8 @@ public class HomPageActivity extends Activity {
 	public static int flag=0;
 	
 	ProgressDialog progressDialog;
+	
+	String username="";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +104,7 @@ public class HomPageActivity extends Activity {
  		tv2=(TextView) findViewById(R.id.textView2);
  		tv3=(TextView) findViewById(R.id.textView3);
  		tv4=(TextView) findViewById(R.id.textView4);
+ 		tv5=(TextView) findViewById(R.id.textView5);
  		
  		im1=(ImageView) findViewById(R.id.imageView1);
  		im2=(ImageView) findViewById(R.id.imageView2);
@@ -105,7 +114,31 @@ public class HomPageActivity extends Activity {
  		search=(Button) findViewById(R.id.button1);
  		
  		et=(EditText) findViewById(R.id.editText1);
-		
+ 	//	alCat.add("Category");
+ 		
+		spinnerCat.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int pos, long id) {
+				if(pos==0)
+				{
+					
+				}
+				else{
+				String categoryId=alCatID.get(pos);
+				Intent intent=new Intent(HomPageActivity.this,CategoryResultActivity.class);
+				intent.putExtra("categoryId", categoryId);
+				startActivity(intent);
+				}
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
  	
 	}
 
@@ -146,6 +179,12 @@ public class HomPageActivity extends Activity {
     			
     		case R.id.logout:
     			flag=0;
+//    			 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+//    	            if(settings.contains("username")) {
+//    	                SharedPreferences.Editor editor = settings.edit();
+//    	                editor.remove("username");
+//    	                editor.commit();
+//    	            }
     			Intent intent3 = new Intent(this, HomPageActivity.class);
     			startActivity(intent3);
     			
@@ -154,6 +193,13 @@ public class HomPageActivity extends Activity {
 		
     			Intent intent4 = new Intent(this, CreateRecipeActivity.class);
     			startActivity(intent4);
+		
+    			break; 
+    			
+    		case R.id.shopping:
+    			
+    			Intent intent5 = new Intent(this, ShoppingList.class);
+    			startActivity(intent5);
 		
     			break;  
     		
@@ -221,7 +267,13 @@ public class HomPageActivity extends Activity {
 		protected void onPostExecute(Void result) {
 			
 			// progressDialog.dismiss();
-	                  
+	                  Intent intent=getIntent();
+	                  try{
+	                  username=intent.getStringExtra("username");
+	                  if(username!=null){
+	                  tv5.setText("Hi,"+username);
+	                  }
+	                  }catch(Exception ex){}
 	                
 //	                 Bitmap mutableBitmap = bmp.copy(Bitmap.Config.ARGB_8888, true);
 //	                 Canvas canvas = new Canvas(mutableBitmap);
@@ -434,6 +486,7 @@ private void GetCategoryList() {
 			//	System.out.println("RecipeId="+jObject.get("RecipeId"));
 //				System.out.println("photo="+jObject.get("photo"));
 				alCat.add(jObject.get("CategoryTitle").toString());
+				alCatID.add(jObject.get("CategoryId").toString());
 				
 				
 			}

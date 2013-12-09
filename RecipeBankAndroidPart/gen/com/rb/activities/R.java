@@ -22,33 +22,48 @@ public final class R {
         public static final int searchBtn=0x7f040002;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int im=0x7f020001;
-        public static final int images=0x7f020002;
-        public static final int search=0x7f020003;
+        public static final int favourite=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int im=0x7f020002;
+        public static final int images=0x7f020003;
+        public static final int search=0x7f020004;
+        public static final int star_off=0x7f020005;
+        public static final int star_on=0x7f020006;
+        public static final int welcome=0x7f020007;
     }
     public static final class id {
+        public static final int LinearLayout1=0x7f080018;
         public static final int RelativeLayout1=0x7f080000;
-        public static final int action_settings=0x7f080016;
-        public static final int add=0x7f080018;
+        public static final int action_settings=0x7f08001f;
+        public static final int add=0x7f080025;
+        public static final int addcomment=0x7f080022;
+        public static final int addfavourite=0x7f080020;
         public static final int button1=0x7f080008;
         public static final int button2=0x7f080007;
         public static final int button3=0x7f080009;
         public static final int editText1=0x7f080003;
         public static final int editText2=0x7f080004;
         public static final int editText3=0x7f08000a;
+        public static final int editTextcomment=0x7f08001a;
         public static final int imageButton1=0x7f080001;
         public static final int imageView1=0x7f08000e;
-        public static final int imageView2=0x7f080012;
-        public static final int imageView3=0x7f080013;
-        public static final int imageView4=0x7f080014;
+        public static final int imageView2=0x7f080013;
+        public static final int imageView3=0x7f080014;
+        public static final int imageView4=0x7f080015;
         public static final int inscroll=0x7f08000c;
-        public static final int listView1=0x7f080015;
-        public static final int login=0x7f08001a;
-        public static final int logout=0x7f080017;
-        public static final int register=0x7f08001b;
-        public static final int shopping=0x7f080019;
-        public static final int spinner1=0x7f080011;
+        public static final int layout_root=0x7f08001d;
+        public static final int lblListHeader=0x7f08001b;
+        public static final int lblListItem=0x7f08001c;
+        public static final int listView1=0x7f080017;
+        public static final int login=0x7f080027;
+        public static final int logout=0x7f080024;
+        public static final int lvExp=0x7f080019;
+        public static final int numberPicker1=0x7f08001e;
+        public static final int rateit=0x7f080021;
+        public static final int ratingBar1=0x7f080011;
+        public static final int register=0x7f080028;
+        public static final int shopping=0x7f080026;
+        public static final int spinner1=0x7f080012;
         public static final int tableRow1=0x7f08000d;
         public static final int tableRow2=0x7f08000f;
         public static final int tableRow3=0x7f080010;
@@ -56,6 +71,8 @@ public final class R {
         public static final int textView2=0x7f080006;
         public static final int textView3=0x7f080005;
         public static final int textView4=0x7f08000b;
+        public static final int textView5=0x7f080016;
+        public static final int viewcomment=0x7f080023;
     }
     public static final class layout {
         public static final int activity_add_steps=0x7f030000;
@@ -66,7 +83,16 @@ public final class R {
         public static final int activity_register=0x7f030005;
         public static final int activity_se=0x7f030006;
         public static final int activity_search_result=0x7f030007;
-        public static final int activity_steps=0x7f030008;
+        public static final int activity_shopping_list=0x7f030008;
+        public static final int activity_steps=0x7f030009;
+        public static final int activity_view_comment=0x7f03000a;
+        public static final int activity_view_ingre=0x7f03000b;
+        public static final int activity_welcome=0x7f03000c;
+        public static final int category_result=0x7f03000d;
+        public static final int comment=0x7f03000e;
+        public static final int list_group=0x7f03000f;
+        public static final int list_item=0x7f030010;
+        public static final int rateit=0x7f030011;
     }
     public static final class menu {
         public static final int add_steps=0x7f070000;
@@ -78,13 +104,19 @@ public final class R {
         public static final int main=0x7f070006;
         public static final int register=0x7f070007;
         public static final int search_result=0x7f070008;
-        public static final int steps=0x7f070009;
+        public static final int shopping_list=0x7f070009;
+        public static final int steps=0x7f07000a;
+        public static final int view_comment=0x7f07000b;
+        public static final int view_ingre=0x7f07000c;
+        public static final int welcome=0x7f07000d;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int cat=0x7f050011;
         public static final int hello_world=0x7f050002;
         public static final int title_activity_add_steps=0x7f05000b;
+        public static final int title_activity_category_result=0x7f050010;
         public static final int title_activity_create_ingre=0x7f05000a;
         public static final int title_activity_create_recipe=0x7f050009;
         public static final int title_activity_detailed_view=0x7f050005;
@@ -93,7 +125,11 @@ public final class R {
         public static final int title_activity_register=0x7f05000c;
         public static final int title_activity_se=0x7f050004;
         public static final int title_activity_search_result=0x7f050006;
+        public static final int title_activity_shopping=0x7f05000e;
         public static final int title_activity_steps=0x7f050008;
+        public static final int title_activity_view_comment=0x7f05000f;
+        public static final int title_activity_view_ingre=0x7f05000d;
+        public static final int title_activity_welcome=0x7f050012;
     }
     public static final class style {
         /** 

@@ -1,9 +1,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+  <item
+        
+	android:id="@+id/addfavourite"
+	android:title="Add To Favourite"
+	android:orderInCategory="1"></item>
+	<item
+	    
+	android:id="@+id/rateit"
+	android:title="Rate it"
+	android:orderInCategory="2"></item>
+	
+	 <item
+        
+	android:id="@+id/addcomment"
+	android:title="Add Comment"
+	android:orderInCategory="1"></item>
+	<item
+	    
+	android:id="@+id/viewcomment"
+	android:title="View Comments"
+	android:orderInCategory="2"></item>
+	
+	
 
 </menu>

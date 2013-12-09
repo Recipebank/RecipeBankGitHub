@@ -13,10 +13,12 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Bitmap.Config;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -44,7 +46,7 @@ public class AddStepsActivity extends Activity {
 	private final String METHOD_NAME = "insertRecipeStep";
 	EditText et1;
 	EditText et2;
-
+	ProgressDialog progressDialog;
 	ImageButton ib1;
 
 	Button btnFinish;
@@ -110,13 +112,16 @@ public class AddStepsActivity extends Activity {
 		@Override
 		protected void onPostExecute(Void result) {
 
-			
-	                
+		//	progressDialog.dismiss();
+			Toast toast = Toast.makeText(AddStepsActivity.this,"Step Added", Toast.LENGTH_LONG);
+			toast.show();     
 			Log.i(TAG, "onPostExecute");
 		}
 
 		@Override
 		protected void onPreExecute() {
+		//	super.onPreExecute();
+		//	progressDialog = ProgressDialog.show(AddStepsActivity.this, "Connecting", "Please wait");
 			Log.i(TAG, "onPreExecute");
 		}
 
@@ -202,8 +207,11 @@ public class AddStepsActivity extends Activity {
 
 				//ImageView imageView = (ImageView) findViewById(R.id.imageButton1);
 				ib1.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-				Bitmap bm = BitmapFactory.decodeFile(picturePath);
+				BitmapFactory.Options options=new BitmapFactory.Options();
+	            options.inJustDecodeBounds = false;
+	            options.inPreferredConfig = Config.RGB_565;
+	            options.inDither = true;
+				Bitmap bm = BitmapFactory.decodeFile(picturePath,options);
 				byte[] bt = BitmapToBytes(bm);
 				byteString = Base64.encode(bt);
 	         

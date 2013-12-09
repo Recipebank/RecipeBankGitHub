@@ -9,63 +9,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".DetailedViewActivity" >
 
- 
-        <TableLayout
-            android:id="@+id/inscroll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="102dp"
-            android:orientation="vertical" >
-
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:padding="5dip" >
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
-                    android:maxHeight="200dp"
-                    android:maxWidth="200dp"
-                    android:minHeight="100dp"
-                    android:minWidth="100dp"
-                    android:src="@drawable/im" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dip" >
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dip" >
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:text="TextView" />
-            </TableRow>
-        </TableLayout>
-
-    <Button
-        android:id="@+id/button1"
+    <TableLayout
+        android:id="@+id/inscroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="102dp"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="250dp"
+                android:layout_height="170dp"
+                android:maxHeight="170dp"
+                android:maxWidth="250dp"
+                android:minHeight="170dp"
+                android:minWidth="250dp"
+                android:background="#000000"
+				android:padding="2dp"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:isIndicator="true"
+                android:numStars="5" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
         android:layout_alignLeft="@+id/inscroll"
         android:layout_below="@+id/inscroll"
-        android:layout_marginTop="50dp"
-        android:onClick="ViewSteps"
-        android:text="View Steps" />
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/textView1"
@@ -73,16 +71,37 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/inscroll"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="88dp"
-        android:text="TextView" />
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:onClick="ViewIngredients"
+        android:text="View Ingredients" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_toRightOf="@+id/button2"
+        android:onClick="ViewSteps"
+        android:text="View Steps" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignParentTop="true"
-        android:text="Recipe Detail"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignLeft="@+id/inscroll"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView" />
 
 </RelativeLayout>

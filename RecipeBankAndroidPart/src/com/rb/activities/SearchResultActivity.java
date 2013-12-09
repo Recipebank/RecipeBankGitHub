@@ -12,6 +12,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -35,7 +36,7 @@ public class SearchResultActivity extends Activity {
 	ArrayList<String> searchList=new ArrayList<String>();
 	ArrayList<String> RecipeIdList=new ArrayList<String>();
 	ListView lv=null;
-
+	ProgressDialog progressDialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,6 +81,7 @@ public class SearchResultActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(Void result) {
+		//	progressDialog.dismiss();
 			 ArrayAdapter<String> arrayAdapter =      
 	                 new ArrayAdapter<String>(SearchResultActivity.this,android.R.layout.simple_list_item_1, searchList);
 	                
@@ -93,6 +95,8 @@ public class SearchResultActivity extends Activity {
 
 		@Override
 		protected void onPreExecute() {
+		//	super.onPreExecute();
+		//	progressDialog = ProgressDialog.show(SearchResultActivity.this, "Processing", "Please wait");
 			Log.i(TAG, "onPreExecute");
 		}
 

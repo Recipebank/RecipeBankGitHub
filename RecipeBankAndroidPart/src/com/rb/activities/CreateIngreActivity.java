@@ -10,6 +10,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import com.rb.util.Ipconfig;
@@ -35,8 +37,7 @@ public class CreateIngreActivity extends Activity {
 	String etval1=null;
 	String etval2=null;
 	String etval3=null;
-	
-
+	ProgressDialog progressDialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -94,13 +95,16 @@ public class CreateIngreActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(Void result) {
-				
-	                
+			Toast toast = Toast.makeText(CreateIngreActivity.this,"Ingredient Added", Toast.LENGTH_LONG);
+			toast.show();
+			progressDialog.dismiss();       
 			Log.i(TAG, "onPostExecute");
 		}
 
 		@Override
 		protected void onPreExecute() {
+			super.onPreExecute();
+			progressDialog = ProgressDialog.show(CreateIngreActivity.this, "Connecting", "Please wait");
 			Log.i(TAG, "onPreExecute");
 		}
 

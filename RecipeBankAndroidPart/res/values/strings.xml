@@ -4,15 +4,21 @@
     <string name="app_name">Recipe Bank</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_hom_page">HomPageActivity</string>
-    <string name="title_activity_se">SeActivity</string>
-    <string name="title_activity_detailed_view">DetailedViewActivity</string>
-    <string name="title_activity_search_result">SearchResultActivity</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_steps">StepsActivity</string>
-    <string name="title_activity_create_recipe">CreateRecipeActivity</string>
-    <string name="title_activity_create_ingre">CreateIngreActivity</string>
-    <string name="title_activity_add_steps">AddStepsActivity</string>
-    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_hom_page">Home</string>
+    <string name="title_activity_se">Home</string>
+    <string name="title_activity_detailed_view">Detailed View</string>
+    <string name="title_activity_search_result">Search Result</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_steps">Steps</string>
+    <string name="title_activity_create_recipe">Create Recipe</string>
+    <string name="title_activity_create_ingre">Create Ingredients</string>
+    <string name="title_activity_add_steps">Add Steps</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_view_ingre">View Ingredients</string>
+    <string name="title_activity_shopping">Shopping List</string>
+    <string name="title_activity_view_comment">View Comments</string>
+    <string name="title_activity_category_result">Categories</string>
+    <string name="cat">Category</string>
+    <string name="title_activity_welcome">Welcome</string>
 
 </resources>

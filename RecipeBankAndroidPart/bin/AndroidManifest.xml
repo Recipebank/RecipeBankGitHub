@@ -20,11 +20,7 @@
         <activity
             android:name="com.rb.activities.HomPageActivity"
             android:label="@string/title_activity_hom_page" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+           
         </activity>
         <activity
             android:name="com.rb.activities.SeActivity"
@@ -61,6 +57,31 @@
         <activity
             android:name="com.rb.activities.RegisterActivity"
             android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.ViewIngreActivity"
+            android:label="@string/title_activity_view_ingre" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.ShoppingList"
+            android:label="@string/title_activity_shopping" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.ViewCommentActivity"
+            android:label="@string/title_activity_view_comment" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.CategoryResultActivity"
+            android:label="@string/title_activity_category_result" >
+        </activity>
+        <activity
+            android:name="com.rb.activities.WelcomeActivity"
+            android:label="@string/title_activity_welcome" >
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

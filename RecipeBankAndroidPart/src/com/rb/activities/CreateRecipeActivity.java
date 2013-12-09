@@ -13,10 +13,12 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Bitmap.Config;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -46,7 +48,8 @@ public class CreateRecipeActivity extends Activity {
 	String title=null;
 	String desc=null;
 	String recipeId=null;
-
+	int accountId;
+	ProgressDialog progressDialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -88,6 +91,7 @@ public class CreateRecipeActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(Void result) {
+		//	progressDialog.dismiss();
 			Intent intent=new Intent(CreateRecipeActivity.this,CreateIngreActivity.class);
 			intent.putExtra("recipeId", recipeId);
 			startActivity(intent);
@@ -98,6 +102,8 @@ public class CreateRecipeActivity extends Activity {
 
 		@Override
 		protected void onPreExecute() {
+		//	super.onPreExecute();
+		//	progressDialog = ProgressDialog.show(CreateRecipeActivity.this, "Connecting", "Please wait");
 			Log.i(TAG, "onPreExecute");
 		}
 
@@ -115,9 +121,9 @@ public class CreateRecipeActivity extends Activity {
 	{
 		title=et1.getText().toString();
 		desc=et2.getText().toString();
-		
+		accountId=LoginActivity.accountID;
 		JSONObject json=new JSONObject();
-		json.put("AccountId", 1);
+		json.put("AccountId", accountId);
 		json.put("RecipeTitle", title);
 		json.put("Description", desc);
 		json.put("Photo", byteString);
@@ -182,8 +188,11 @@ public class CreateRecipeActivity extends Activity {
 
 				//ImageView imageView = (ImageView) findViewById(R.id.imageButton1);
 				Ib.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-				Bitmap bm = BitmapFactory.decodeFile(picturePath);
+				BitmapFactory.Options options=new BitmapFactory.Options();
+	            options.inJustDecodeBounds = false;
+	            options.inPreferredConfig = Config.RGB_565;
+	            options.inDither = true;
+				Bitmap bm = BitmapFactory.decodeFile(picturePath,options);
 				byte[] bt = BitmapToBytes(bm);
 				byteString = Base64.encode(bt);
 	         
